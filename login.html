@@ -6,7 +6,7 @@
     <title>Login</title>
     <script>
         function printInput() {
-            alert(document.getElementById("username").value + "\t" + document.getElementById('password').value + '\t' + document.getElementById('isnewuser').checked)
+            alert(document.getElementById("username").value + "\t" + document.getElementById('password').value)
         }
     </script>
 </head>
@@ -17,11 +17,14 @@
 
         User Name: <input type="text" id="username"><br>
         Password:<input type="password" id="password"><br>
-        <input type="checkbox" id="isnewuser" value=true checked=false>I am a new user<br>
-
+        <!-- <input type="checkbox" id="isnewuser" value=true checked=false>I am a new user<br> -->
+        <a href="./resetpassword.html">
+            forgot your password?
+        </a><br>
         <a href="./reserve.html">
-            <button onclick="printInput()">Login</button>
+            <button onclick="printInput()">Sign In</button>
         </a>
+        <a href="./register.html">Register</a>
     </div>
 
 
