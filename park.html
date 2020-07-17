@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Park</title>
+    <script>
+        var duration = 0;
+        var date = new Date();
+        function updateTime() {
+            date = new Date();
+            document.getElementById('time').innerText = "当前时间：" + dateToString(date);
+        }
+        function park(element) {
+            duration = parseInt(document.getElementById('duration').value);
+            if (!duration) {
+                duration = 0;
+            }
+            alert('成功停车:' + duration + 'h')
+            element.innerText = "修改";
+
+            var p1 = document.createElement("p")
+            p1.innerText = "预计停放时间：" + duration + 'h'
+            p1.id = 'durationLabel'
+            var p2 = document.createElement("p")
+            p2.innerText = "预计离开时间：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
+            p2.id = 'leaveTimeLabel'
+            document.getElementById('state').parentNode.appendChild(p1);
+            document.getElementById('state').parentNode.appendChild(p2);
+
+            document.getElementById('state').parentNode.removeChild(document.getElementById('state'));
+            document.getElementById('scan').parentNode.removeChild(document.getElementById('scan'));
+
+            element.onclick = changeDuration;
+        }
+        function changeDuration() {
+            duration = parseInt(document.getElementById('duration').value);
+            if (!duration) {
+                duration = 0;
+            }
+            alert("停车时间修改为：" + duration + 'h');
+            document.getElementById('durationLabel').innerText = "预计停放时间：" + duration + 'h'
+            document.getElementById('leaveTimeLabel').innerText = "预计离开时间：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
+        }
+        function dateToString(_date) {
+            console.log(_date);
+            return _date.getMonth() + "/" + _date.getDate() + " " + _date.toLocaleTimeString()
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border: medium double rgb(0, 140, 255);width: 300px;height:500px;margin:auto">
+        <nav>
+            <a href="./myreservation.html">My Parking Place</a> |
+            <a href="./park.html"><b>Park</b></a> |
+            <a href="./leave.html">Leave</a> |
+            <a href="./login.html" style="float: right;">Log out</a>
+        </nav>
+        <div
+            style="background-color: rgb(224, 224, 224);width: 250px;height:150px;margin:auto;margin-top: 50px;padding: 10px;">
+            <p>当前车位： A06</p>
+            <p id='state'>状态： 可用</p>
+            <p id="time">当前时间：6/17 上午11:50:19</p>
+        </div>
+        停放时间: <input id='duration' type="text" id="username"> h<br>
+        <button id='scan' onclick="updateTime()"
+            style="width: 100px;height:100px;background: url('./scanQRcode.PNG') ;display: block; margin:auto;">
+        </button>
+        <button onclick="park(this)" style="display: block; margin:auto;">
+            确认停车
+        </button>
+    </div>
+</body>
+
+</html>

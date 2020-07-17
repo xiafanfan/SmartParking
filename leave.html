@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Leave</title>
+    <script>
+        function call(name) {
+            alert("我们将帮你联系" + name + '的车主')
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border: medium double rgb(0, 140, 255);width: 300px;height:500px;margin:auto">
+        <nav>
+            <a href="./myreservation.html">My Parking Place</a> |
+            <a href="./park.html">Park</a> |
+            <a href="./leave.html"><b>Leave</b></a> |
+            <a href="./login.html" style="float: right;">Log out</a>
+        </nav>
+        <div
+            style="background-color: rgb(224, 224, 224);width: 250px;height:120px;margin:auto;margin-top: 50px;padding: 10px;">
+            <p>当前车位： A06</p>
+            <p id="time">当前时间：6/17 上午11:50:19</p>
+            <p id="time">预计离开时间：6/17 下午18:50:19</p>
+        </div>
+        <div
+            style="background-color: rgb(224, 224, 224);width: 250px;height:150px;margin:auto;margin-top: 20px;padding: 10px;">
+            您的车辆当前被遮挡：
+            <div style="background-color: rgb(255,255,255)">
+                <span> A07 沪A12345 <br>
+                    预计5h后离开
+                </span>
+                <span>
+                    <button onclick="call('沪A12345')" style="float:right">call</button>
+                </span>
+            </div>
+            <div style="background-color: rgb(255,255,255);margin-top: 10px;">
+                <span> A09 沪B54321<br>
+                    预计4h后离开
+                </span>
+                <span>
+                    <button onclick="call('沪B54321')" style="float:right">call</button>
+                </span>
+            </div>
+        </div>
+
+        <a href="./reserve.html">
+            <button style="display: block; margin:auto;">
+                提前离开
+            </button>
+        </a>
+    </div>
+</body>
+
+</html>

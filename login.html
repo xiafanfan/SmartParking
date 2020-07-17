@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <script>
+        function printInput() {
+            alert(document.getElementById("username").value + "\t" + document.getElementById('password').value + '\t' + document.getElementById('isnewuser').checked)
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border: medium double rgb(0, 140, 255);width: 300px;height:500px;margin:auto">
+        <h1>智能停车场</h1>
+
+        User Name: <input type="text" id="username"><br>
+        Password:<input type="password" id="password"><br>
+        <input type="checkbox" id="isnewuser" value=true checked=false>I am a new user<br>
+
+        <a href="./reserve.html">
+            <button onclick="printInput()">Login</button>
+        </a>
+    </div>
+
+
+</body>
+
+
+</html>
