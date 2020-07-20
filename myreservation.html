@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>My Parking Place</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style type="text/css">
         span div {
             margin: 5px
@@ -35,15 +36,14 @@
 </head>
 
 <body>
-    <div style="border: medium double rgb(0, 140, 255);width: 300px;height:500px;margin:auto">
+    <div class="mainbody">
         <nav>
-            <a href="./myreservation.html"><b>My Parking Place</b></a> |
-            <a href="./park.html">Park</a> |
-            <a href="./leave.html">Leave</a> |
-            <a href="./login.html" style="float: right;">Log out</a>
+            <a href="./myreservation.html" class="active">My Parking Place</a> 
+            <a href="./park.html">Park</a> 
+            <a href="./leave.html">Leave</a> 
+            <a href="./login.html" style="float: right;">Logout</a>
         </nav>
-        <div
-            style="background-color: rgb(190, 190, 190);width: 250px;height:300px;margin:auto;margin-top: 50px;padding: 10px;">
+        <div class="layout">
             <span style="width: 70px;display:inline-block;" class="horzontal">
                 <div>
                     <button id="a1">A 1</button>
@@ -100,12 +100,16 @@
                 </div>
             </span>
         </div>
+        <div style="text-align:center">
         <a href="./reserve.html">
-            <button onclick="cancle()">Cancle Reservation</button>
+            <button class="button1 button2" onclick="cancle()">Cancle Reservation</button>
         </a>
+        </div>
+        <div style="text-align:center">
         <a href="./park.html">
-            <button>Park</button>
+            <button class="button1 button2">Park</button>
         </a>
+        </div>
     </div>
 </body>
 
