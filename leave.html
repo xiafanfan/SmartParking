@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>Leave</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
@@ -10,17 +11,34 @@
             width: 150px;
             text-align: left;
             height: 40px;
-            vertical-align:middle;
+
         }
         .td_right{
             padding-right: 3px;
-            vertical-align:middle;
+
         }
     </style>    
     <script>
         function call(name) {
             alert("我们将帮你联系" + name + '的车主')
         }
+        //获取系统时间
+        function showTime() {
+            nowtime = new Date();
+            year = nowtime.getFullYear();//年
+            month = nowtime.getMonth() + 1;//月
+            day = nowtime.getDate();//日
+            hour = nowtime.getHours();//时
+            minutes = nowtime.getMinutes();//分
+            seconds = nowtime.getSeconds();//秒
+            //文字增加空格
+            document.getElementById("nowtime").style ="white-space:pre;";
+            //显示时间
+            document.getElementById("nowtime").innerText = year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds);
+        }
+        setInterval("showTime()",1000);
+        //月日时分秒小于10补0
+        function p(s) {return s <10 ? '0' +s : s;}
     </script>
 </head>
 
@@ -34,7 +52,7 @@
         </nav>
         <div class="Messbox">
             <p>当前车位： A06</p>
-            <p id="time">当前时间：6/17 上午11:50:19</p>
+            <p>Time：<lable id="nowtime"></lable></p>
             <p id="time">预计离开时间：6/17 下午18:50:19</p>
         </div>
         <div class="Messbox">

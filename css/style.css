@@ -17,8 +17,22 @@ q:before,q:after,blockquote:before,blockquote:after{ content:""; }
     box-sizing: border-box;
 }
 body{
-    background: url("./bg.jpg") no-repeat center;
-    padding-top: 25px;
+        /*background: url("./bg.jpg") no-repeat center;*/
+        background-color: #99CCFF;
+        background-size:100% 100%;
+        background-attachment: fixed;
+        padding-top: 25px;
+      }
+.container{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 96px;
+}
+.container img{
+  transform: scale(0.8);
+  height: auto;
+  width: auto\9;
 }
 div{margin: 10px;}
 .mainbody{
@@ -26,7 +40,7 @@ div{margin: 10px;}
 	width: 300px;
 	height:500px;
 	border: 8px solid #EEEEEE;
-    background-color: white;
+  background-color: white;
 	margin:auto
 }
 
@@ -37,13 +51,17 @@ nav {
 }
 
 nav a {
+  background-color: #FFF;
   float: left;
   display: block;
   color: black;
   text-align: center;
-  padding: 8px 5px;
+  padding: 8px 4px;
   text-decoration: none;
   font-size: 14px;
+  border-radius: 3px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
 }
 
 nav a:hover {
@@ -56,6 +74,11 @@ nav a.active {
   color: white;
 }
 
+
+/* --------- tabless --------- */
+.td_left{vertical-align:middle;}
+.td_right{vertical-align:middle;}
+
 /* --------- Links --------- */
 .alog:link {color:#000033;}		/* 未被访问的链接 */
 .alog:visited {color:#ff0000;}	/* 已被访问的链接 */
@@ -63,6 +86,8 @@ nav a.active {
 .alog:active {color:#900b09;}	/* 正在被点击的链接 */
 
 /* --------- buttons --------- */ 
+button{	cursor: pointer;}
+.button1:hover{background-color: #2196F3;}
 .button1 {  
     width: 80px;  
     padding:8px;  
@@ -76,7 +101,8 @@ nav a.active {
     vertical-align: middle;  
     border: 1px;  
     font-weight: 300;  
-    font-size:100%  
+    font-size:100% 
+
 }
 .button2 { width: 250px; }
 

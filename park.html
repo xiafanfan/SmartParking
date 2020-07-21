@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>Park</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script>
@@ -10,8 +11,25 @@
         var date = new Date();
         function updateTime() {
             date = new Date();
-            document.getElementById('time').innerText = "当前时间：" + dateToString(date);
+            document.getElementById('time').innerText = "Time：" + dateToString(date);
         }
+        //获取系统时间
+        function showTime() {
+            nowtime = new Date();
+            year = nowtime.getFullYear();//年
+            month = nowtime.getMonth() + 1;//月
+            day = nowtime.getDate();//日
+            hour = nowtime.getHours();//时
+            minutes = nowtime.getMinutes();//分
+            seconds = nowtime.getSeconds();//秒
+            //文字增加空格
+            document.getElementById("nowtime").style ="white-space:pre;";
+            //显示时间
+            document.getElementById("nowtime").innerText = year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds);
+        }
+        setInterval("showTime()",1000);
+        //月日时分秒小于10补0
+        function p(s) {return s <10 ? '0' +s : s;}
         function park(element) {
             duration = parseInt(document.getElementById('duration').value);
             if (!duration) {
@@ -63,7 +81,7 @@
             <p>Selected parking spaces：</p>
             <p>A06</p>
             <p id='state'>Status： Available </p>
-            <p id="time">Time：6/17 上午11:50:19</p>
+            <p>Time: <lable id="nowtime"></lable></p>
         </div>
         <div style="text-align: center;">
         Parking time : <input id='duration' type="text" id="username" style="width: 80px;height: 30px;border: 1px solid #A6A6A6;border-radius: 5px;padding-left: 10px;"> hour(s)<br>
