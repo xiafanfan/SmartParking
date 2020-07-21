@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -103,4 +104,107 @@
 </body>
 
 
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        .td_left{
+            width: 80px;
+            text-align: right;
+            height: 35px;
+        }
+        .td_right{
+            padding-left: 20px ;
+        }
+
+        #username,#password,#confirm,#license,#tel{
+            width: 150px;
+            height: 32px;
+            border: 1px solid #A6A6A6 ;
+            /*设置边框圆角*/
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+    <div class="mainbody">
+        <h1>用户注册</h1>
+        <div style="margin-top: 30px;text-align: center;">
+            <!--定义表单 form-->
+            <form method="post" action="./index.html">
+                <table>
+                    <tr>
+                        <td class="td_left"><label for="username">Username</label></td>
+                        <td class="td_right"><input type="text" name="username" id="username" placeholder="请输入用户名"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="password">Password</label></td>
+                        <td class="td_right"><input type="password" name="password" id="password" placeholder="请输入密码"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="confirm">Confirm</label></td>
+                        <td class="td_right"><input type="password" name="confirm" id="confirm" placeholder="请确认密码"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="license">License</label></td>
+                        <td class="td_right"><input type="text" name="license" id="license" placeholder="请输入车牌"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="tel">Mobile</label></td>
+                        <td class="td_right"><input type="text" name="tel" id="tel" placeholder="请输入手机号"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div style="text-align: center;">
+                            <button class="button1 button2" id="btn_register">Register</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn_register").onclick =function register() {
+            if (document.getElementById('username').value.length < 1) {
+                alert('invalid user name')
+                return
+            }
+            if (document.getElementById('password').value.length < 1 || document.getElementById('password').value != document.getElementById('confirmpassword').value) {
+                alert('invalid password')
+                return
+            }
+            if (document.getElementById('license').value.length<7) {
+                alert('invalid license plate number')
+                return
+            }
+            if (document.getElementById('tel').value.length!=11) {
+                alert('invalid phone number')
+                return
+            }
+            document.location.href = ("./index.html")
+
+            // alert(document.getElementById("username").value + "\t" + document.getElementById('password').value)
+        }
+    </script>
+</body>
+
+
+>>>>>>> 11c01e09d7660367306be4036c9c08b69bae3946
 </html>

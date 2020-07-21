@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -114,4 +115,121 @@
     </div>
 </body>
 
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My Parking Place</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+        span div {
+            margin: 5px
+        }
+
+        .horzontal div button {
+            width: 100%;
+            height: 30px;
+        }
+
+        .vertical div button {
+            width: 100%;
+            height: 60px;
+        }
+
+        .flexible div button {
+            border: solid rgb(255, 217, 0);
+        }
+
+        ._my {
+            background-color: rgb(5, 182, 182);
+        }
+    </style>
+    <script>
+        function cancle() {
+            alert("successfully canceled");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="mainbody">
+        <nav>
+            <a href="./myreservation.html" class="active">My Parking Place</a> 
+            <a href="./park.html">Park</a> 
+            <a href="./leave.html">Leave</a> 
+            <a href="./index.html" style="float: right;">Logout</a>
+        </nav>
+        <div class="layout">
+            <span style="width: 70px;display:inline-block;" class="horzontal">
+                <div>
+                    <button id="a1">A 1</button>
+                </div>
+                <div>
+                    <button id="a2">A 2</button>
+                </div>
+                <div>
+                    <button id="a3">A 3</button>
+                </div>
+                <div>
+                    <button id="a4">A 4</button>
+                </div>
+                <div>
+                    <button id="a5">A 5</button>
+                </div>
+                <div>
+                    <button id="a6" class="_my">A 6</button>
+                </div>
+                <div>
+                    <button id="a7">A 7</button>
+                </div>
+                <div>
+                    <button id="a8">A 8</button>
+                </div>
+
+            </span>
+            <span style="width: 40px;display: inline-block; float:right" class="vertical">
+                <div>
+                    <button id="a9">A 9</button>
+                </div>
+                <div>
+                    <button id="a10">A 10</button>
+                </div>
+                <div>
+                    <button id="a11">A 11</button>
+                </div>
+                <div>
+                    <button id="a12">A 12</button>
+                </div>
+            </span>
+            <span style="width: 40px;display: inline-block; float:right" class="vertical flexible">
+                <div>
+                    <button id="a13">A 13</button>
+                </div>
+                <div>
+                    <button id="a14">A 14</button>
+                </div>
+                <div>
+                    <button id="a15">A 15</button>
+                </div>
+                <div>
+                    <button id="a16">A 16</button>
+                </div>
+            </span>
+        </div>
+        <div style="text-align:center">
+        <a href="./reserve.html">
+            <button class="button1 button2" onclick="cancle()">Cancle Reservation</button>
+        </a>
+        </div>
+        <div style="text-align:center">
+        <a href="./park.html">
+            <button class="button1 button2">Park</button>
+        </a>
+        </div>
+    </div>
+</body>
+
+>>>>>>> 11c01e09d7660367306be4036c9c08b69bae3946
 </html>
