@@ -15,7 +15,7 @@
         function scanQR() {
             var v = document.createElement("video");
             v.id = "preview";
-            v.style = "background:gray;width: 200px;height: 120px;display: block; margin:auto"
+            v.style = "background:gray;max-height: 110px;max-width:200px;display:block;margin:auto"
             var scanIcon = document.getElementById('scan')
             var parentNode = scanIcon.parentNode
             parentNode.appendChild(v);
