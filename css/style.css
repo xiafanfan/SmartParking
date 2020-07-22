@@ -40,7 +40,7 @@ div{margin: 10px;}
 	width: 300px;
 	height:500px;
 	border: 8px solid #EEEEEE;
-  background-color: white;
+    background-color: white;
 	margin:auto
 }
 
@@ -80,13 +80,17 @@ nav a.active {
 .td_right{vertical-align:middle;}
 
 /* --------- Links --------- */
-.alog:link {color:#000033;}		/* 未被访问的链接 */
-.alog:visited {color:#ff0000;}	/* 已被访问的链接 */
-.alog:hover {color:#900b09;}	/* 鼠标指针移动到链接上 */
-.alog:active {color:#900b09;}	/* 正在被点击的链接 */
+a:link {color:#428bca;}		/* 未被访问的链接 */
+a:visited {color:#2196F3;}	/* 已被访问的链接 */
+a:hover {color:#900b09;}	/* 鼠标指针移动到链接上 */
+a:active {color:#900b09;}	/* 正在被点击的链接 */
+
 
 /* --------- buttons --------- */ 
-button{	cursor: pointer;}
+button{	
+	cursor: pointer;
+	outline: none; 
+}
 .button1:hover{background-color: #2196F3;}
 .button1 {  
     width: 80px;  
@@ -128,7 +132,7 @@ button{	cursor: pointer;}
 .Messbox{
 	background-color: rgb(224, 224, 224);
 	width: 250px;
-	height:150px;
+	height:180px;
 	margin:auto;
 	margin-top: 20px;
 	padding: 10px;
