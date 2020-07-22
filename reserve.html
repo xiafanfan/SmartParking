@@ -11,17 +11,17 @@
             margin: 5px;
         }
 
-        .horzontal div button {
+        .horzontal div input {
             width: 100%;
             height: 30px;
         }
 
-        .vertical div button {
+        .vertical div input {
             width: 100%;
             height: 60px;
         }
 
-        .flexible div button {
+        .flexible div input {
             border: solid rgb(255, 217, 0);
         }
 
@@ -77,9 +77,11 @@
             document.getElementById(lastselected).style.color = "#FFF";
             document.getElementById(lastselected).style.border="3px solid #063";
             document.getElementById(lastselected).style.fontWeight='bold';
+            document.getElementById(lastselected).name="place"
         }
 
         function selectspace(element) {
+
             if (element.className.indexOf("_available") > -1) {
                 document.getElementById(lastselected).style.color = "black";
                 document.getElementById(lastselected).style.border="";
@@ -87,12 +89,18 @@
                 element.style.color = "#FFF";
                 element.style.border="3px solid #063";
                 element.style.fontWeight='bold';
+                element.name="place"
                 lastselected = element.id;
                 console.log(element.id);
+                //lastselected=element.name;
+                //console.log(element.name);
+                
             }
+
         }
         function show(){
-            alert("Successfully reseaved: "+lastselected.toUpperCase());
+            alert("Successfully reserved: "+lastselected.toUpperCase());
+            //alert("Successfully reserved: "+lastselected);
         }
     </script>
 </head>
@@ -102,60 +110,61 @@
         <nav>
             <a class="active" href="./index.html" style="float: right;">Logout</a>
         </nav>
+        <form action="./myreservation.html" method="post">
         <div class="layout">
             <span style="width: 70px;display:inline-block;" class="horzontal">
                 <div>
-                    <button id="a1" onclick="selectspace(this)" class="_available">A 1</button>
+                    <input type="button" id="a1" onclick="selectspace(this)" class="_available" value="A 1"></input>
                 </div>
                 <div>
-                    <button id="a2" onclick="selectspace(this)" class="_unavailable">A 2</button>
+                    <input type="button" id="a2" onclick="selectspace(this)" class="_unavailable" value="A 2"></input>
                 </div>
                 <div>
-                    <button id="a3" onclick="selectspace(this)" class="_available">A 3</button>
+                    <input type="button" id="a3" onclick="selectspace(this)" class="_available" value="A 3"></input> 
                 </div>
                 <div>
-                    <button id="a4" onclick="selectspace(this)" class="_available">A 4</button>
+                    <input type="button" id="a4" onclick="selectspace(this)" class="_available" value="A 4"></input>
                 </div>
                 <div>
-                    <button id="a5" onclick="selectspace(this)" class="_unavailable">A 5</button>
+                    <input type="button" id="a5" onclick="selectspace(this)" class="_unavailable" value="A 5"></input>
                 </div>
                 <div>
-                    <button id="a6" onclick="selectspace(this)" class="_available">A 6</button>
+                    <input type="button" id="a6" onclick="selectspace(this)" class="_available" value="A 6"></input>
                 </div>
                 <div>
-                    <button id="a7" onclick="selectspace(this)" class="_unavailable">A 7</button>
+                    <input type="button" id="a7" onclick="selectspace(this)" class="_unavailable" value="A 7"></input>
                 </div>
                 <div>
-                    <button id="a8" onclick="selectspace(this)" class="_available">A 8</button>
+                    <input type="button" id="a8" onclick="selectspace(this)" class="_available" value="A 8"></input>
                 </div>
 
             </span>
             <span style="width: 40px;display: inline-block; float:right" class="vertical">
                 <div>
-                    <button id="a9" onclick="selectspace(this)" class="_available">A<br> 9</button>
+                    <input type="button" id="a9" onclick="selectspace(this)" class="_available" value="A&#13;&#10;9"></input>    
                 </div>
                 <div>
-                    <button id="a10" onclick="selectspace(this)" class="_available">A<br> 10</button>
+                    <input type="button" id="a10" onclick="selectspace(this)" class="_available" value="A&#13;&#10;10"></input>
                 </div>
                 <div>
-                    <button id="a11" onclick="selectspace(this)" class="_unavailable">A<br> 11</button>
+                    <input type="button" id="a11" onclick="selectspace(this)" class="_unavailable" value="A&#13;&#10;11"></input>
                 </div>
                 <div>
-                    <button id="a12" onclick="selectspace(this)" class="_unavailable">A<br> 12</button>
+                    <input type="button" id="a12" onclick="selectspace(this)" class="_unavailable" value="A&#13;&#10;12"></input>
                 </div>
             </span>
             <span style="width: 40px;display: inline-block; float:right" class="vertical flexible">
                 <div>
-                    <button id="a13" onclick="selectspace(this)" class="_unready">A<br> 13</button>
+                    <input type="button" id="a13" onclick="selectspace(this)" class="_unready" value="A&#13;&#10;13"></input>
                 </div>
                 <div>
-                    <button id="a14" onclick="selectspace(this)" class="_unready">A<br> 14</button>
+                    <input type="button" id="a14" onclick="selectspace(this)" class="_unready" value="A&#13;&#10;14"></input>
                 </div>
                 <div>
-                    <button id="a15" onclick="selectspace(this)" class="_unavailable">A<br> 15</button>
+                    <input type="button" id="a15" onclick="selectspace(this)" class="_unavailable" value="A&#13;&#10;15"></input>
                 </div>
                 <div>
-                    <button id="a16" onclick="selectspace(this)" class="_available">A<br> 16</button>
+                    <input type="button" id="a16" onclick="selectspace(this)" class="_available" value="A&#13;&#10;16"></input>
                 </div>
             </span>
         </div>
@@ -179,10 +188,11 @@
             </table>
         </div>
         <div style="text-align:center">
-        <a href="./myreservation.html">
-            <button class="button1 button2" onclick="show()">Reserve</button>
-        </a>
+            <a href="./myreservation.html">
+                <button class="button1 button2" type="submit" onclick="show()">Reserve</button>
+            </a>
         </div>
+        </form>
     </div>
 
 </body>
