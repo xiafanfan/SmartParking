@@ -24,7 +24,7 @@
                 {
                     video: document.getElementById('preview')
                 });
-
+            scanner.scanPeriod=0.5;
             scanner.addListener('scan', function (content) {
                 if (content.substr(0, 20) == "intelligent-park-lot") {
                     var atts = content.substr(21).split(';');
@@ -37,6 +37,7 @@
                     }
                 }
             });
+            Instascan.Camera.removeAllCameras();
             Instascan.Camera.getCameras().then(function (cameras) {
                 // on mobile pick the rear camera
                 if (cameras.length > 1) {
@@ -126,7 +127,7 @@
             </p>
             <div>
                 <button id='scan' onclick="scanQR()"
-                    style="width: 120px;height:120px;border: none; background: url('./css/scanQRcode.PNG') no-repeat center;display: block; margin:auto;">
+                    style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;display: block; margin:auto;">
                 </button>
             </div>
         </div>
