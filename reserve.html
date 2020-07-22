@@ -32,6 +32,7 @@
         ._unavailable {
             background-color: rgb(255, 162, 149);
             cursor: not-allowed;
+            border: none; 
         }
 
         ._unready {
@@ -81,7 +82,7 @@
         function selectspace(element) {
             if (element.className.indexOf("_available") > -1) {
                 document.getElementById(lastselected).style.color = "black";
-                document.getElementById(lastselected).style.border="0px";
+                document.getElementById(lastselected).style.border="";
                 document.getElementById(lastselected).style.fontWeight='normal';
                 element.style.color = "#FFF";
                 element.style.border="3px solid #063";
