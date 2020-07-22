@@ -31,22 +31,61 @@
 
         ._unavailable {
             background-color: rgb(255, 162, 149);
+            cursor: not-allowed;
         }
 
         ._unready {
             background-color: rgb(119, 129, 121);
+            cursor: not-allowed;
+        }
+        .green{
+            width:45px; 
+            height:18px; 
+            background-color: rgb(119, 179, 134); 
+            margin: 1px;
+        }
+        .red{
+            width:45px; 
+            height:18px; 
+            background-color: rgb(255, 162, 149); 
+            margin: 1px;
+        }
+        .gray{
+            width:45px; 
+            height:18px; 
+            background-color: rgb(119, 129, 121); 
+            margin: 1px;
+        }
+        .border{
+            width:45px; 
+            height:18px; 
+            border: solid rgb(255, 217, 0);
+            margin: 1px;
+        }
+        td{
+            width:50px; 
+            height:20px; 
+            vertical-align:middle;
+            font-size: 80%;
+            margin-left: 5px;
         }
     </style>
     <script>
         var lastselected = "a1";
         function init() {
-            document.getElementById(lastselected).style.color = "red";
+            document.getElementById(lastselected).style.color = "#FFF";
+            document.getElementById(lastselected).style.border="3px solid #063";
+            document.getElementById(lastselected).style.fontWeight='bold';
         }
 
         function selectspace(element) {
             if (element.className.indexOf("_available") > -1) {
                 document.getElementById(lastselected).style.color = "black";
-                element.style.color = "red";
+                document.getElementById(lastselected).style.border="0px";
+                document.getElementById(lastselected).style.fontWeight='normal';
+                element.style.color = "#FFF";
+                element.style.border="3px solid #063";
+                element.style.fontWeight='bold';
                 lastselected = element.id;
                 console.log(element.id);
             }
@@ -92,7 +131,7 @@
             </span>
             <span style="width: 40px;display: inline-block; float:right" class="vertical">
                 <div>
-                    <button id="a9" onclick="selectspace(this)" class="_available">A 9</button>
+                    <button id="a9" onclick="selectspace(this)" class="_available">A<br> 9</button>
                 </div>
                 <div>
                     <button id="a10" onclick="selectspace(this)" class="_available">A 10</button>
@@ -118,6 +157,25 @@
                     <button id="a16" onclick="selectspace(this)" class="_available">A 16</button>
                 </div>
             </span>
+        </div>
+        <div>
+            <table style="border-collapse:separate; border-spacing:0px 2px;margin:auto;width:240px; ">
+                <div>
+                <tr>
+                    <td ><div class="green"></div></td>
+                    <td>Available</td>
+                    <td ><div class="red"></div></td>
+                    <td>Occupied</td>
+                </tr>
+
+                <tr>
+                    <td > <div class="gray"></div></td>
+                    <td>Unready</td>
+                    <td ><div class="border"></div></td>
+                    <td>Flexible</td>
+                </tr>
+                </div>
+            </table>
         </div>
         <div style="text-align:center">
         <a href="./myreservation.html">
