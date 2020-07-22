@@ -37,7 +37,6 @@
                     }
                 }
             });
-            Instascan.Camera.removeAllCameras();
             Instascan.Camera.getCameras().then(function (cameras) {
                 // on mobile pick the rear camera
                 if (cameras.length > 1) {
