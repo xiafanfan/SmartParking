@@ -24,7 +24,6 @@
                 {
                     video: document.getElementById('preview')
                 });
-            scanner.scanPeriod=0.5;
             scanner.addListener('scan', function (content) {
                 if (content.substr(0, 20) == "intelligent-park-lot") {
                     var atts = content.substr(21).split(';');
