@@ -3,99 +3,49 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>Park</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script>
-        var duration = 0;
-        var date = new Date();
-        function updateTime() {
-            date = new Date();
-            document.getElementById('time').innerText = "Time：" + dateToString(date);
-        }
-        //获取系统时间
-        function showTime() {
-            nowtime = new Date();
-            year = nowtime.getFullYear();//年
-            month = nowtime.getMonth() + 1;//月
-            day = nowtime.getDate();//日
-            hour = nowtime.getHours();//时
-            minutes = nowtime.getMinutes();//分
-            seconds = nowtime.getSeconds();//秒
-            //文字增加空格
-            document.getElementById("nowtime").style ="white-space:pre;";
-            //显示时间
-            document.getElementById("nowtime").innerText = year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds);
-        }
-        setInterval("showTime()",1000);
-        //月日时分秒小于10补0
-        function p(s) {return s <10 ? '0' +s : s;}
-        function park(element) {
-            duration = parseInt(document.getElementById('duration').value);
-            if (!duration) {
-                duration = 0;
-            }
-            alert('成功停车:' + duration + 'h')
-            element.innerText = "Confirm modification!";
+    <script src="./instascan.min.js"></script>
+    <script type="text/javascript" src="./park.js"></script>
 
-            var p1 = document.createElement("p")
-            p1.innerText = "预计停放时间：" + duration + 'h'
-            p1.id = 'durationLabel'
-            var p2 = document.createElement("p")
-            p2.innerText = "预计离开时间：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
-            p2.id = 'leaveTimeLabel'
-            document.getElementById('state').parentNode.appendChild(p1);
-            document.getElementById('state').parentNode.appendChild(p2);
-
-            document.getElementById('state').parentNode.removeChild(document.getElementById('state'));
-            document.getElementById('scan').parentNode.removeChild(document.getElementById('scan'));
-
-            element.onclick = changeDuration;
-        }
-        function changeDuration() {
-            duration = parseInt(document.getElementById('duration').value);
-            if (!duration) {
-                duration = 0;
-            }
-            alert("停车时间修改为：" + duration + 'h');
-            document.getElementById('durationLabel').innerText = "预计停放时间：" + duration + 'h'
-            document.getElementById('leaveTimeLabel').innerText = "预计离开时间：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
-        }
-        function dateToString(_date) {
-            console.log(_date);
-            return _date.getMonth() + "/" + _date.getDate() + " " + _date.toLocaleTimeString()
-        }
-    </script>
 
 </head>
-
 <body>
+
+ 
     <div class="mainbody">
         <nav>
-            <a href="./myreservation.html">My Parking Place</a> 
-            <a href="./park.html" class="active">Park</a> 
-            <a href="./leave.html">Leave</a> 
+            <a href="./myreservation.html">My Parking Place</a>
+            <a href="./park.html" class="active">Park</a>
+            <a href="./leave.html">Leave</a>
             <a href="./index.html" style="float: right;">Logout</a>
         </nav>
         <div class="PMessbox">
-            <p>Selected parking spaces：</p>
-            <p>A06</p>
-            <p id='state'>Status： Available </p>
-            <p>Time: <lable id="nowtime"></lable></p>
+            <p>Selected parking spaces:</p>
+            <p id="parking-space-id"></p>
+            <p id='state'>Status:  </p>
+            <p>Time: <lable id="nowtime"></lable>
+            </p>
         </div>
         <div style="text-align: center;">
-        Parking time : <input id='duration' type="text" id="username" style="width: 80px;height: 30px;border: 1px solid #A6A6A6;border-radius: 5px;padding-left: 10px;"> hour(s)<br>
+            Parking time : <input id='duration' type="text" id="username"
+                style="width: 80px;height: 30px;border: 1px solid #A6A6A6;border-radius: 5px;padding-left: 10px;">
+            hour(s)<br>
         </div>
         <div>
-        <button class="button1 button2" onclick="park(this)" style="display: block; margin:auto;">
-            Confirm parking!
-        </button>
+            <!-- <video id="preview" style="width: 120px;height:120px;display: block; margin:auto;"></video> -->
+            <button id='scan' onclick="scanQR()"
+                style="width: 120px;height:120px;background: url('./css/scanQRcode.PNG') no-repeat center;display: block; margin:auto;">
+            </button>
         </div>
         <div>
-        <button id='scan' onclick="updateTime()"
-            style="width: 120px;height:120px;background: url('./css/scanQRcode.PNG') no-repeat center;display: block; margin:auto;">
-        </button>
+            <button class="button1 button2" onclick="park(this)" style="display: block; margin:auto;">
+                Confirm parking!
+            </button>
         </div>
+
     </div>
 </body>
 
