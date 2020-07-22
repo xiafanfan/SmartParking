@@ -87,7 +87,7 @@ a:active {color:#900b09;}	/* 正在被点击的链接 */
 
 
 /* --------- buttons --------- */ 
-button{	
+button,input{	
 	cursor: pointer;
 	outline: none; 
 }
