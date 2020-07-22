@@ -35,14 +35,14 @@
             if (!duration) {
                 duration = 0;
             }
-            alert('成功停车:' + duration + 'h')
+            alert('Parking successfully:' + duration + 'h')
             element.innerText = "Confirm modification!";
 
             var p1 = document.createElement("p")
-            p1.innerText = "预计停放时间：" + duration + 'h'
+            p1.innerText = "Estimate parking duration：" + duration + 'h'
             p1.id = 'durationLabel'
             var p2 = document.createElement("p")
-            p2.innerText = "预计离开时间：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
+            p2.innerText = "Estimate to departure at：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
             p2.id = 'leaveTimeLabel'
             document.getElementById('state').parentNode.appendChild(p1);
             document.getElementById('state').parentNode.appendChild(p2);
@@ -57,9 +57,9 @@
             if (!duration) {
                 duration = 0;
             }
-            alert("停车时间修改为：" + duration + 'h');
-            document.getElementById('durationLabel').innerText = "预计停放时间：" + duration + 'h'
-            document.getElementById('leaveTimeLabel').innerText = "预计离开时间：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
+            alert("Parking duration has been changed to：" + duration + 'h');
+            document.getElementById('durationLabel').innerText = "Estimate parking duration：" + duration + 'h'
+            document.getElementById('leaveTimeLabel').innerText = "Estimate to departure at：" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
         }
         function dateToString(_date) {
             console.log(_date);
@@ -77,12 +77,18 @@
             <a href="./leave.html">Leave</a> 
             <a href="./index.html" style="float: right;">Logout</a>
         </nav>
-        <div class="PMessbox">
+        <div class="layout">
             <p>Selected parking spaces：</p>
             <p>A06</p>
             <p id='state'>Status： Available </p>
             <p>Time: <lable id="nowtime"></lable></p>
+            <div>
+            <button id='scan' onclick="updateTime()"
+                style="width: 120px;height:120px;background: url('./css/scanQRcode.PNG') no-repeat center;display: block; margin:auto;">
+            </button>
+            </div>
         </div>
+
         <div style="text-align: center;">
         Parking time : <input id='duration' type="text" id="username" style="width: 80px;height: 30px;border: 1px solid #A6A6A6;border-radius: 5px;padding-left: 10px;"> hour(s)<br>
         </div>
@@ -91,11 +97,7 @@
             Confirm parking!
         </button>
         </div>
-        <div>
-        <button id='scan' onclick="updateTime()"
-            style="width: 120px;height:120px;background: url('./css/scanQRcode.PNG') no-repeat center;display: block; margin:auto;">
-        </button>
-        </div>
+
     </div>
 </body>
 
