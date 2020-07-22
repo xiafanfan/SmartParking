@@ -12,33 +12,38 @@
 
         var duration = 0;
         var date = new Date();
+        var scanner;
         function scanQR() {
             var v = document.createElement("video");
             v.id = "preview";
-            v.style = "background:gray;max-height: 110px;max-width:200px;display:block;margin:auto"
+            v.style = "background:gray;height: 214px;width:214px;oject-fit:cover;"
             var scanIcon = document.getElementById('scan')
             var parentNode = scanIcon.parentNode
             parentNode.appendChild(v);
             parentNode.removeChild(scanIcon);
-            var scanner = new Instascan.Scanner(
-                {
-                    video: document.getElementById('preview')
-                });
-            scanner.addListener('scan', function (content) {
-                if (content.substr(0, 20) == "intelligent-park-lot") {
-                    var atts = content.substr(21).split(';');
-                    if (atts.length >= 2) {
-                        document.getElementById("parking-space-id").innerText = atts[1].charAt(0).toUpperCase() + atts[1].slice(1)
+            if (!scanner) {
+                var scanner = new Instascan.Scanner(
+                    {
+                        video: document.getElementById('preview'),
+                    });
+                scanner.addListener('scan', function (content) {
+                    if (content.substr(0, 20) == "intelligent-park-lot") {
+                        var atts = content.substr(21).split(';');
+                        if (atts.length >= 2) {
+                            document.getElementById("parking-space-id").innerText = atts[1].charAt(0).toUpperCase() + atts[1].slice(1)
                         parentNode.appendChild(scanIcon);
-                        parentNode.removeChild(v);
-                        scanner.removeAllListeners();
-                        return
+                            parentNode.removeChild(v);
+                            scanner.stop()
+                            scanner.removeAllListeners();
+                            return
+                        }
                     }
-                }
-            });
+                });
+            }
             Instascan.Camera.getCameras().then(function (cameras) {
                 // on mobile pick the rear camera
                 if (cameras.length > 1) {
+                    scanner.mirror = false;
                     scanner.start(cameras[1]);
                 }
                 else if (cameras.length > 0) {
@@ -123,9 +128,10 @@
             <p id='state'>Status： - </p>
             <p>Time: <lable id="nowtime"></lable>
             </p>
-            <div>
+            <div
+                style="width:120px;height: 120px;border: solid;overflow: hidden;margin:auto;display: flex;justify-content: center;align-items: center;">
                 <button id='scan' onclick="scanQR()"
-                    style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;display: block; margin:auto;">
+                    style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;">
                 </button>
             </div>
         </div>
