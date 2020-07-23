@@ -138,7 +138,12 @@ button,input{
 	padding: 10px;
 	border-radius: 10px;
 }
-
+/* --------- Alerts--------- */
+.alert{
+	color:#900b09;
+	font-weight:bolder;
+	font-size:14px;
+}
 /* --------- Header Tags --------- */
 h1,h2,h3,h4,h5,h6{ color:#000; font-weight:bolder; padding:10px 15px 0px 15px; }
 h1{ font-size:36px; }
