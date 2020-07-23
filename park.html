@@ -84,7 +84,7 @@
             document.getElementById('state').parentNode.appendChild(p2);
 
             document.getElementById('state').parentNode.removeChild(document.getElementById('state'));
-            document.getElementById('scan').parentNode.removeChild(document.getElementById('scan'));
+            document.getElementById('scanContainer').parentNode.removeChild(document.getElementById('scanContainer'));
 
             element.onclick = changeDuration;
         }
@@ -128,7 +128,7 @@
             <p id='state'>Status： - </p>
             <p>Time: <lable id="nowtime"></lable>
             </p>
-            <div
+            <div id='scanContainer'
                 style="width:120px;height: 120px;border: solid;overflow: hidden;margin:auto;display: flex;justify-content: center;align-items: center;">
                 <button id='scan' onclick="scanQR()"
                     style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;">
