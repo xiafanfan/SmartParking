@@ -117,68 +117,79 @@
   <!-- .Header  -->
       <!-- Content  -->
       <div id="content">
-        <div class="content-wrap page-register">
+        <div class="content-wrap page-login">
           <div class="subsite-banner">
-            <img src="img/subsite-banner.jpg">
+            <img src="img/subsite-banner-6.jpg">
           </div>
           <div class="subsite subsite-with-banner">
             <div class="row">
               <div class="col-md-12">
                 <div class="subsite-heading">
-                  Reset Password
+                  Reserve before 7:30 a.m. everyday!
                 </div>
               </div>
             </div>
-            <form class="form-group" action="index.html">
-              <div class="row field-row">
-                <div class="col">
-                  <label>Username</label>
-                  <div class="field-group">
-                    <i class="fas fa-user-circle"></i>
-                    <input type="text" class="form-control with-icon"   >
+            <form class="form-group" action="park.html">            
+              <div class="form-group col-md-12">
+                <label>Time to Arrive</label>
+                <div class="row">
+                  <div  class="col no-padding-right">
+                    <div class="field-group">
+                      <i class="far fa-calendar-alt"></i>
+                      <input type="text" id="datestart" class="datepicker form-control with-icon date-start-class" placeholder=" Date"  >
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="row field-row">
-                <div class="col">
-                  <label>Phone</label>
-                  <div class="field-group">
-                    <i class="fas fa-phone-square"></i>
-                    <input type="text" class="form-control with-icon" value="+86">
-                  </div>
-                </div>
-              </div>              
-              <div class="row field-row">
-                <div class="col">
-                  <label>New Password</label>
-                  <div class="field-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" class="form-control with-icon" >
-                  </div>
-                </div>
-              </div>
-              <div class="row field-row">
-                <div class="col">
-                  <label>Confirm Password</label>
-                  <div class="field-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" class="form-control with-icon" >
+                  <div  class="col">
+                    <div class="field-group">
+                      <i class="far fa-clock"></i>
+                      <input type="text" class="form-control timepicker with-icon" />
+                    </div>
                   </div>
                 </div>
               </div>
               
-              <div class="row field-row register-submit">
-                <div class="col">
-                  <div class="button">
-                    <button type="submit" class="theme-button">Reset</button>
+              <div class="form-group col-md-12">
+                <label>Time to leave</label>
+                <div class="row">
+                  <div  class="col no-padding-right">
+                    <div class="field-group">
+                      <i class="far fa-calendar-alt"></i>
+                      <input type="text" id="dateend" class="datepicker form-control with-icon date-end-class" placeholder=" Date"  >
+                    </div>
+                  </div>
+                  <div  class="col">
+                    <div class="field-group">
+                      <i class="far fa-clock"></i>
+                      <input type="text" class="form-control timepicker with-icon " />
+                    </div>
                   </div>
                 </div>
               </div>
+              <div class="form-group col-md-12">
+                <label>Parking spaces Available</label>
+                <div class="field-group">
+                  <i class="fas fa-car"></i>
+                  <select class="custom-select mr-sm-2 with-icon" id="caravailable">
+                    <option selected disabled>Please select</option>
+                    <option value="1">A1</option>
+                    <option value="2">A2</option>
+                    <option value="3">A3</option>
+                  </select>
+                </div>
+              </div>
+                      
+              <div class="row field-row login-submit">
+                <div class="col">
+                  <div class="button">
+                    <button type="submit" class="theme-button">Reserve</button>
+                  </div>
+                </div>
+              </div>
+
+              
             </form>
             
-          </div>
-          
-          
+          </div> 
         </div>
       </div>
       <!-- .Content  -->

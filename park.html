@@ -1,172 +1,342 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>Park</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="./instascan.min.js"></script>
-    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
-    <script>
+    <title>Intelligent Park Lot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap v4.3.1 CSS -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick/slick-theme.css">
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="lib/Magnific-Popup-master/dist/magnific-popup.css">
+    <!-- Font Awesome Free 5.10.2 CSS JS -->
+    <link href="lib/fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/brands.min.js"></script>
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/solid.min.js"></script>
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/regular.min.js"></script>
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/fontawesome.min.js"></script>
+    <!-- Date picker -->
+    <link href="lib/gijgo/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <style>
+      .td_left{
+            width: 150px;
+            text-align: left;
+            height: 40px;
 
-        var duration = 0;
-        var date = new Date();
-        var scanner;
-        function scanQR() {
-            var v = document.createElement("video");
-            v.id = "preview";
-            v.style = "background:gray;height: 214px;width:214px;oject-fit:cover;"
-            var scanIcon = document.getElementById('scan')
-            var parentNode = scanIcon.parentNode
-            parentNode.appendChild(v);
-            parentNode.removeChild(scanIcon);
-            if (!scanner) {
-                var scanner = new Instascan.Scanner(
-                    {
-                        video: document.getElementById('preview'),
-                    });
-                scanner.addListener('scan', function (content) {
-                    if (content.substr(0, 20) == "intelligent-park-lot") {
-                        var atts = content.substr(21).split(';');
-                        if (atts.length >= 2) {
-                            document.getElementById("parking-space-id").innerText = atts[1].charAt(0).toUpperCase() + atts[1].slice(1)
-                            parentNode.appendChild(scanIcon);
-                            parentNode.removeChild(v);
-                            scanner.stop()
-                            scanner.removeAllListeners();
-
-                            //demo
-                            showStatus('available')
-                            return
-                        }
-                    }
-                });
-            }
-            Instascan.Camera.getCameras().then(function (cameras) {
-                // on mobile pick the rear camera
-                if (cameras.length > 1) {
-                    scanner.mirror = false;
-                    scanner.start(cameras[1]);
-                }
-                else if (cameras.length > 0) {
-                    scanner.start(cameras[0]);
-                } else {
-                    console.error('No cameras found.');
-                }
-            }).catch(function (e) {
-                console.error(e);
-            });
         }
+        .td_right{
+            padding-right: 3px;
 
-
-        //获取系统时间
-        function showTime() {
-            //文字增加空格
-            document.getElementById("nowtime").style = "white-space:pre;";
-            //显示时间
-            document.getElementById("nowtime").innerText = dateToString(new Date());
         }
-        setInterval("showTime()", 1000);
-
-        function park(element) {
-            duration = parseInt(document.getElementById('duration').value);
-            if (!duration) {
-                duration = 0;
-            }
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "/ConfirmParkingHour",
-                data: "duration="+duration.toString()+"&username=demo01&gid="+document.getElementById("parking-space-id").innerText,
-                dataType: "json",
-                success: function (result) {
-                    console.log(result)
-                }, error: function (e) {
-                    console.log(e)
-                }
-            })
-            alert('Successfully parked:' + duration + 'h')
-            element.innerText = "Confirm modification!";
-
-            var p1 = document.createElement("p")
-            p1.innerText = "parking duration:" + duration + 'h'
-            p1.id = 'durationLabel'
-            var p2 = document.createElement("p")
-            p2.innerText = "time to leave:" + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
-            p2.id = 'leaveTimeLabel'
-            document.getElementById('state').parentNode.appendChild(p1);
-            document.getElementById('state').parentNode.appendChild(p2);
-
-            document.getElementById('state').parentNode.removeChild(document.getElementById('state'));
-            document.getElementById('scanContainer').parentNode.removeChild(document.getElementById('scanContainer'));
-
-            element.onclick = changeDuration;
-        }
-        function changeDuration() {
-            duration = parseInt(document.getElementById('duration').value);
-            if (!duration) {
-                duration = 0;
-            }
-            alert("parking time has been modified as: " + duration + 'h');
-            document.getElementById('durationLabel').innerText = "parking duration: " + duration + 'h'
-            document.getElementById('leaveTimeLabel').innerText = "time to leave: " + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
-        }
-        function dateToString(time) {
-            year = time.getFullYear();//年
-            month = time.getMonth() + 1;//月
-            day = time.getDate();//日
-            hour = time.getHours();//时
-            minutes = time.getMinutes();//分
-            seconds = time.getSeconds();//秒
-            return year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds)
-        }
-        //月日时分秒小于10补0
-        function p(s) { return s < 10 ? '0' + s : s; }
-        function showStatus(_status) {
-            document.getElementById('state').innerText = "Status： " + _status
-        }
-    </script>
-</head>
-
-<body>
-
-
-    <div class="mainbody">
-        <nav>
-            <a href="./myreservation.html">My Parking Place</a>
-            <a href="./park.html" class="active">Park</a>
-            <a href="./leave.html">Leave</a>
-            <a href="./index.html" style="float: right;">Logout</a>
-        </nav>
-        <div class="layout">
-            <p>Selected parking spaces：</p>
-            <p id="parking-space-id">-</p>
-            <p id='state'>Status： - </p>
-            <p>Time: <lable id="nowtime"></lable>
-            </p>
-            <div id='scanContainer'
-                style="width:120px;height: 120px;border: solid;overflow: hidden;margin:auto;display: flex;justify-content: center;align-items: center;">
-                <button id='scan' onclick="scanQR()"
-                    style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;">
-                </button>
-            </div>
-        </div>
-
-        <div style="text-align: center;">
-            Parking time : <input id='duration' type="text" id="username"
-                style="width: 80px;height: 30px;border: 1px solid #A6A6A6;border-radius: 5px;padding-left: 10px;">
-            hour(s)<br>
-        </div>
-
-        <div>
-            <button class="button1 button2" onclick="park(this)" style="display: block; margin:auto;">
-                Confirm parking!
-            </button>
-        </div>
-
+    </style>  
+  </head>
+  <body class="default">
+    <!-- Preloading -->
+    <div class="preloading">
+      <div class="wrap-preload">
+        <div class="cssload-loader"></div>
+      </div>
     </div>
-</body>
+    <!-- .Preloading -->
+  <!-- Sidebar left -->
+  <nav id="sidebarleft" class="sidenav">
+    <div id="dismiss">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>Account</h3>
+    </div>
+    <div class="sdprofile">
+      <div class="sdp-left">
+        <div class="sd-name" id="currentusername">Lilia Doe</div>
+        <div class="sd-status" id="currentusermobile">+86 18688886666</div>
+      </div>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a href="myreservation.html"><i class="fas fa-home"></i>My Parking Place</a>
+      </li>
 
-</html>
+      <li>
+        <a href="#pagereserve" data-toggle="collapse" aria-expanded="false"><i class="fas fa-receipt"></i>Reserve
+          <span><i class="fas fa-caret-down"></i></span></a>
+        <ul class="collapse collapsible-body" id="pagereserve">
+          <li>
+            <a href="reserve.html">Manual Reserve</a>
+          </li>
+          <li>
+            <a href="book.html">Automated Reserve</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="park.html"><i class="fas fa-car"></i>Park</a>
+      </li>
+      <li>
+        <a href="leave.html"><i class="fas fa-car"></i>Leave</a>
+      </li>
+      <li>
+        <a href="index.html"><i class="fas fa-map"></i>Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- .Sidebar left -->
+  <!-- Sidebar right -->
+  <nav id="sidebarright" class="sidenav">
+    <div id="dismiss">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>Notifications</h3>
+    </div>
+    <ul class="right-menu">
+      <li class="right-menu-item">
+        <a href="#">
+          <i class="fas fa-envelope"></i>
+          <div class="ntitle">Your vehicle is blocked</div>
+          <div class="desc"> It will leave 5h later</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- .Sidebar right-->
+  <!-- Header  -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-header">
+    <div class="container-fluid">
+      <button type="button" id="sidebarleftbutton" class="btn">
+        <i class="fas fa-align-left"></i>
+      </button>
+      <div class="logo">Intelligent Park Lot</div>
+      <button type="button" id="sidebarrightbutton" class="btn">
+        <div class="notif">
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-circle "></i>
+        </div>
+      </button>
+    </div>
+  </nav>
+  <!-- .Header  -->
+      <!-- Content  -->
+      <div id="content">
+        <div class="content-wrap">
+          <div class="subsite">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="subsite-heading">
+                  Confirm Parking Duration
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="layout">
+                    <p>Selected parking spaces：</p>
+                    <p id="parking-space-id">-</p>
+                    <p id='state'>Status： - </p>
+                    <p>Time: <lable id="nowtime"></lable>
+                    </p>
+                    <div id='scanContainer'
+                        style="width:120px;height: 120px;border: solid;overflow: hidden;margin:auto;display: flex;justify-content: center;align-items: center;">
+                        <button id='scan' onclick="scanQR()"
+                            style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;">
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    Parking time: <input id='duration' type="text" id="username"
+                        style="width: 80px;height: 30px;border: 1px solid #A6A6A6;border-radius: 5px;padding-left: 10px;">
+                    hour(s)<br>
+                </div>
+                <br>
+                <div>
+                    <button class="theme-button mcbutton"  onclick="park(this)" style="display: block; margin:auto;">
+                        Confirm parking!
+                    </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <!-- .Content  -->
+  <!-- Botom Panel  -->
+  <div class="bottom-panel">
+    <div class="bp-col">
+      <a href="reserve.html">
+        <div class="bp-icon"><img src="img/reserve.png" alt="icon"> </div>
+        <div class="bp-text">Reserve</div>
+      </a>
+    </div>
+    <div class="bp-col">
+      <a href="park.html">
+        <div class="bp-icon"><img src="img/ipcar.png" alt="icon"></div>
+        <div class="bp-text">Park</div>
+      </a>
+    </div>
+    <div class="bp-col">
+      <a href="leave.html">
+        <div class="bp-icon"><img src="img/leave.png" alt="icon"></div>
+        <div class="bp-text">Leave</div>
+      </a>
+    </div>
+    <div class="bp-col">
+      <a href="setting.html">
+        <div class="bp-icon"><img src="img/ipaccount.png" alt="icon"></div>
+        <div class="bp-text">Account</div>
+      </a>
+    </div>
+  </div>
+  <!-- .Bottom Panel  -->
+      <div class="overlay"></div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery v3.4.1 -->
+      <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+      <!--  Bootstrap v4.3.1 JS -->
+      <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+      <!-- Magnific Popup core JS file -->
+      <script src="lib/Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
+      <!-- Slick JS -->
+      <script src="lib/slick/slick/slick.min.js"></script>
+      <!--  Date Picker -->
+      <script src="lib/gijgo/js/gijgo.min.js" type="text/javascript"></script>
+      <!--  Custom JS -->
+      <script src="js/theme.js"></script>
+      <script src="./instascan.min.js"></script>
+      <script src="./instascan.min.js"></script>
+      <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+      <script>
+
+          var duration = 0;
+          var date = new Date();
+          var scanner;
+          function scanQR() {
+              var v = document.createElement("video");
+              v.id = "preview";
+              v.style = "background:gray;height: 214px;width:214px;oject-fit:cover;"
+              var scanIcon = document.getElementById('scan')
+              var parentNode = scanIcon.parentNode
+              parentNode.appendChild(v);
+              parentNode.removeChild(scanIcon);
+              if (!scanner) {
+                  var scanner = new Instascan.Scanner(
+                      {
+                          video: document.getElementById('preview'),
+                      });
+                  scanner.addListener('scan', function (content) {
+                      if (content.substr(0, 20) == "intelligent-park-lot") {
+                          var atts = content.substr(21).split(';');
+                          if (atts.length >= 2) {
+                              document.getElementById("parking-space-id").innerText = atts[1].charAt(0).toUpperCase() + atts[1].slice(1)
+                              parentNode.appendChild(scanIcon);
+                              parentNode.removeChild(v);
+                              scanner.stop()
+                              scanner.removeAllListeners();
+
+                              //demo
+                              showStatus('available')
+                              return
+                          }
+                      }
+                  });
+              }
+              Instascan.Camera.getCameras().then(function (cameras) {
+                  // on mobile pick the rear camera
+                  if (cameras.length > 1) {
+                      scanner.mirror = false;
+                      scanner.start(cameras[1]);
+                  }
+                  else if (cameras.length > 0) {
+                      scanner.start(cameras[0]);
+                  } else {
+                      console.error('No cameras found.');
+                  }
+              }).catch(function (e) {
+                  console.error(e);
+              });
+          }
+
+
+          //获取系统时间
+          function showTime() {
+              //文字增加空格
+              document.getElementById("nowtime").style = "white-space:pre;";
+              //显示时间
+              document.getElementById("nowtime").innerText = dateToString(new Date());
+          }
+          setInterval("showTime()", 1000);
+
+          function park(element) {
+              duration = parseInt(document.getElementById('duration').value);
+              if (!duration) {
+                  duration = 0;
+              }
+              $.ajax({
+                  type: "POST",
+                  dataType: "json",
+                  url: "/ConfirmParkingHour",
+                  data: "duration="+duration.toString()+"&username=demo01&gid="+document.getElementById("parking-space-id").innerText,
+                  dataType: "json",
+                  success: function (result) {
+                      console.log(result)
+                  }, error: function (e) {
+                      console.log(e)
+                  }
+              })
+              alert('Successfully parked:' + duration + 'h')
+              element.innerText = "Confirm modification!";
+
+              var p1 = document.createElement("p")
+              p1.innerText = "Parking duration :  " + duration + ' hour(s)'
+              p1.id = 'durationLabel'
+              var p2 = document.createElement("p")
+              p2.innerText = "Planned departure time :  " + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
+              p2.id = 'leaveTimeLabel'
+              document.getElementById('state').parentNode.appendChild(p1);
+              document.getElementById('state').parentNode.appendChild(p2);
+
+              document.getElementById('state').parentNode.removeChild(document.getElementById('state'));
+              document.getElementById('scanContainer').parentNode.removeChild(document.getElementById('scanContainer'));
+
+              element.onclick = changeDuration;
+          }
+          function changeDuration() {
+              duration = parseInt(document.getElementById('duration').value);
+              if (!duration) {
+                  duration = 0;
+              }
+              alert("parking time has been modified as: " + duration + 'h');
+              document.getElementById('durationLabel').innerText = "Parking duration :  " + duration + ' hour(s)'
+              document.getElementById('leaveTimeLabel').innerText = "Planned departure time :  " + dateToString(new Date(date.getTime() + duration * 3600 * 1000))
+          }
+          function dateToString(time) {
+              year = time.getFullYear();//年
+              month = time.getMonth() + 1;//月
+              day = time.getDate();//日
+              hour = time.getHours();//时
+              minutes = time.getMinutes();//分
+              seconds = time.getSeconds();//秒
+              return year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds)
+          }
+          //月日时分秒小于10补0
+          function p(s) { return s < 10 ? '0' + s : s; }
+          function showStatus(_status) {
+              document.getElementById('state').innerText = "Status： " + _status
+          }
+      </script>
+    </body>
+  </html>

@@ -1,13 +1,36 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <title>Leave</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Intelligent Park Lot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap v4.3.1 CSS -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick/slick-theme.css">
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="lib/Magnific-Popup-master/dist/magnific-popup.css">
+    <!-- Font Awesome Free 5.10.2 CSS JS -->
+    <link href="lib/fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/brands.min.js"></script>
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/solid.min.js"></script>
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/regular.min.js"></script>
+    <script defer src="lib/fontawesome-free-5.10.2-web/js/fontawesome.min.js"></script>
+    <!-- Date picker -->
+    <link href="lib/gijgo/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <style>
-    	.td_left{
+      .td_left{
             width: 150px;
             text-align: left;
             height: 40px;
@@ -17,91 +40,210 @@
             padding-right: 3px;
 
         }
-    </style>    
-    <script>
-        function call(name) {
-            alert("We will help to contact the owner of  " + name )
-        }
-        //获取系统时间
-        function showTime() {
-            //文字增加空格
-            document.getElementById("nowtime").style ="white-space:pre;";
-            //显示时间
-            document.getElementById("nowtime").innerText = dateToString(new Date());
-        }
-        setInterval("showTime()",1000);
-        //月日时分秒小于10补0
-        function p(s) {return s <10 ? '0' +s : s;}
-        function dateToString(time) {
-            year = time.getFullYear();//年
-            month = time.getMonth() + 1;//月
-            day = time.getDate();//日
-            hour = time.getHours();//时
-            minutes = time.getMinutes();//分
-            seconds = time.getSeconds();//秒
-            return year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds)
-        }
-
-        //车位id,停放小时数
-        function showInfo(_id,_duration){
-            document.getElementById('parkspaceid').innerText='Selected parking spaces： '+_id.charAt(0).toUpperCase() +_id.slice(1)
-            document.getElementById('departuretime').innerText='Estimate to departure at：'+dateToString(new Date(new Date().getTime() + _duration * 3600 * 1000))
-        }
-
-        //遮挡状态1，遮挡状态2
-        function showBlocked(_status1,_status2){
-            if(!_status1){
-                let lab=document.getElementById('status1');
-                lab.parentNode.removeChild(lab)
-            }
-            if(!_status2){
-                let lab=document.getElementById('status2');
-                lab.parentNode.removeChild(lab)
-            }
-            if(_status1==false&&_status2==false){
-                document.getElementById('blockstatus').innerText="Your vehicle is not blocked"
-            }
-        }
-    </script>
-</head>
-
-<body onload="showInfo('a03',8);showBlocked(false,true)">
-    <div class="mainbody">
-        <nav>
-            <a href="./myreservation.html">My Parking Place</a> 
-            <a href="./park.html">Park</a> 
-            <a href="./leave.html" class="active">Leave</a> 
-            <a href="./index.html" style="float: right;">Logout</a>
-        </nav>
-        <div class="Messbox">
-            <p id="parkspaceid">Selected parking spaces： </p>
-            <p>Time：<lable id="nowtime"></lable></p>
-            <p id="departuretime">Estimate to departure at：</p>
-        </div>
-        <div class="Messbox">
-            <p id="blockstatus">Your vehicle is blocked by: </p>
-            <table style="border-collapse:separate; border-spacing:0px 5px;background-color: white;border-radius: 5px;">
-            	<div>
-                <tr id="status1">
-                    <td class="td_left"> A07 沪A12345<br> will leave 5h later</td>
-                    <td class="td_right"><button class="button1" onclick="call('沪A12345')" >call</button></td>
-                </tr>
-
-                <tr id="status2">
-                    <td class="td_left"> A09 沪B54321<br> will leave 4h later</td>
-                    <td class="td_right"><button class="button1" onclick="call('沪B54321')" >call</button></td>
-                </tr>
-                </div>
-            </table>
-        </div>
-        <div style="text-align: center;">
-        <a href="./reserve.html">
-            <button class="button1 button2" >
-                Leave Early
-            </button>
-        </a>
-        </div>
+    </style>  
+  </head>
+  <body class="default">
+    <!-- Preloading -->
+    <div class="preloading">
+      <div class="wrap-preload">
+        <div class="cssload-loader"></div>
+      </div>
     </div>
-</body>
+    <!-- .Preloading -->
+  <!-- Sidebar left -->
+  <nav id="sidebarleft" class="sidenav">
+    <div id="dismiss">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>Account</h3>
+    </div>
+    <div class="sdprofile">
+      <div class="sdp-left">
+        <div class="sd-name" id="currentusername">Lilia Doe</div>
+        <div class="sd-status" id="currentusermobile">+86 18688886666</div>
+      </div>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a href="myreservation.html"><i class="fas fa-home"></i>My Parking Place</a>
+      </li>
 
-</html>
+      <li>
+        <a href="#pagereserve" data-toggle="collapse" aria-expanded="false"><i class="fas fa-receipt"></i>Reserve
+          <span><i class="fas fa-caret-down"></i></span></a>
+        <ul class="collapse collapsible-body" id="pagereserve">
+          <li>
+            <a href="reserve.html">Manual Reserve</a>
+          </li>
+          <li>
+            <a href="book.html">Automated Reserve</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="park.html"><i class="fas fa-car"></i>Park</a>
+      </li>
+      <li>
+        <a href="leave.html"><i class="fas fa-car"></i>Leave</a>
+      </li>
+      <li>
+        <a href="index.html"><i class="fas fa-map"></i>Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- .Sidebar left -->
+  <!-- Sidebar right -->
+  <nav id="sidebarright" class="sidenav">
+    <div id="dismiss">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>Notifications</h3>
+    </div>
+    <ul class="right-menu">
+      <li class="right-menu-item">
+        <a href="#">
+          <i class="fas fa-envelope"></i>
+          <div class="ntitle">Your vehicle is blocked</div>
+          <div class="desc"> It will leave 5h later</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- .Sidebar right-->
+  <!-- Header  -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-header">
+    <div class="container-fluid">
+      <button type="button" id="sidebarleftbutton" class="btn">
+        <i class="fas fa-align-left"></i>
+      </button>
+      <div class="logo">Intelligent Park Lot</div>
+      <button type="button" id="sidebarrightbutton" class="btn">
+        <div class="notif">
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-circle "></i>
+        </div>
+      </button>
+    </div>
+  </nav>
+  <!-- .Header  -->
+      <!-- Content  -->
+      <div id="content">
+        <div class="content-wrap">
+          <div class="subsite">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="subsite-heading">
+                  Leave Parking Lot
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="Messbox">
+                    <p>Selected parking spaces： A06</p>
+                    <p>Time：<lable id="nowtime"></lable></p>
+                    <p id="time">Estimate to departure at：6/17 18:50:19</p>
+                </div>
+                <div class="Messbox">
+                    <div>Your vehicle's current blocked status：</div>
+                    <br>
+                    <div style="margin-left: 6px;">
+                    <table style="border-collapse:separate; border-spacing:0px 5px;background-color: white;border-radius: 5px;">
+                      <div>
+                        <tr>
+                            <td class="td_left"> A07 沪A12345<br> will leave 5h later</td>
+                            <td class="td_right"><button class="theme-button mcbutton"onclick="call('沪A12345')" >call</button></td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_left"> A09 沪B54321<br> will leave 4h later</td>
+                            <td class="td_right"><button class="theme-button mcbutton" onclick="call('沪B54321')" >call</button></td>
+                        </tr>
+                        </div>
+                    </table>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                <a href="./reserve.html">
+                    <button class="theme-button mcbutton">
+                        Leave Now
+                    </button>
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <!-- .Content  -->
+  <!-- Botom Panel  -->
+  <div class="bottom-panel">
+    <div class="bp-col">
+      <a href="reserve.html">
+        <div class="bp-icon"><img src="img/reserve.png" alt="icon"> </div>
+        <div class="bp-text">Reserve</div>
+      </a>
+    </div>
+    <div class="bp-col">
+      <a href="park.html">
+        <div class="bp-icon"><img src="img/ipcar.png" alt="icon"></div>
+        <div class="bp-text">Park</div>
+      </a>
+    </div>
+    <div class="bp-col">
+      <a href="leave.html">
+        <div class="bp-icon"><img src="img/leave.png" alt="icon"></div>
+        <div class="bp-text">Leave</div>
+      </a>
+    </div>
+    <div class="bp-col">
+      <a href="setting.html">
+        <div class="bp-icon"><img src="img/ipaccount.png" alt="icon"></div>
+        <div class="bp-text">Account</div>
+      </a>
+    </div>
+  </div>
+  <!-- .Bottom Panel  -->
+      <div class="overlay"></div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery v3.4.1 -->
+      <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+      <!--  Bootstrap v4.3.1 JS -->
+      <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+      <!-- Magnific Popup core JS file -->
+      <script src="lib/Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
+      <!-- Slick JS -->
+      <script src="lib/slick/slick/slick.min.js"></script>
+      <!--  Date Picker -->
+      <script src="lib/gijgo/js/gijgo.min.js" type="text/javascript"></script>
+      <!--  Custom JS -->
+      <script src="js/theme.js"></script>
+      <script src="./instascan.min.js"></script>
+      <script>
+          function call(name) {
+              alert("We will help to contact the owner of  " + name )
+          }
+          //获取系统时间
+          function showTime() {
+              nowtime = new Date();
+              year = nowtime.getFullYear();//年
+              month = nowtime.getMonth() + 1;//月
+              day = nowtime.getDate();//日
+              hour = nowtime.getHours();//时
+              minutes = nowtime.getMinutes();//分
+              seconds = nowtime.getSeconds();//秒
+              //文字增加空格
+              document.getElementById("nowtime").style ="white-space:pre;";
+              //显示时间
+              document.getElementById("nowtime").innerText = year + "." + p(month) + "." + p(day) + " " + p(hour) + ":" + p(minutes) + ":" + p(seconds);
+          }
+          setInterval("showTime()",1000);
+          //月日时分秒小于10补0
+          function p(s) {return s <10 ? '0' +s : s;}
+      </script>
+    </body>
+  </html>
