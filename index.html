@@ -3,40 +3,51 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
-        .td_left{
+        .td_left {
             width: 80px;
             text-align: right;
             height: 45px;
 
         }
-        .td_right{
-            padding-left: 20px ;
+
+        .td_right {
+            padding-left: 20px;
 
         }
 
-        #username,#password{
+        #username,
+        #password {
             width: 150px;
             height: 32px;
-            border: 1px solid #A6A6A6 ;
+            border: 1px solid #A6A6A6;
             /*设置边框圆角*/
             border-radius: 5px;
             padding-left: 10px;
         }
     </style>
-
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
     <script>
         function printInput() {
             alert(document.getElementById("username").value + "\t" + document.getElementById('password').value)
         }
+        function loginNow() {
+            var x = "name=" + document.getElementById("username").value + "&password=" + document.getElementById('password').value
+            const headers = new Headers({
+                'Access-Control-Allow-Origin': '*',
+                "Content-Type": 'text/plain'
+            })
+        }
+
     </script>
 </head>
 
 <body>
-    <div class="mainbody" >
+    <div class="mainbody">
         <h1>智能停车场</h1>
         <h2>Intelligent Park Lot</h2>
         <div style="margin-top: 40px;text-align: center;">
@@ -45,30 +56,32 @@
                 <table>
                     <tr>
                         <td class="td_left"><label for="username">Username</label></td>
-                        <td class="td_right"><input type="text" name="username" id="username" placeholder="Enter your username"></td>
+                        <td class="td_right"><input type="text" name="username" id="username"
+                                placeholder="Enter your username"></td>
                     </tr>
 
                     <tr>
                         <td class="td_left"><label for="password">Password</label></td>
-                        <td class="td_right"><input type="password" name="password" id="password" placeholder="Enter your password"></td>
+                        <td class="td_right"><input type="password" name="password" id="password"
+                                placeholder="Enter your password"></td>
                     </tr>
                     <tr>
                         <td colspan="2" align="center">
                             <div style="text-align: center;">
                                 <button class="button1" type="submit">Sign In</button>
-                            <a href="./register.html" >Register</a>
+                                <a href="./register.html">Register</a>
                             </div>
                         </td>
                     </tr>
                 </table>
                 <div style="text-align: center;">
-                <a href="./resetpassword.html">
-                    Forget your password?
-                </a><br>
+                    <a href="./resetpassword.html">
+                        Forget your password?
+                    </a><br>
                 </div>
 
             </form>
-            </div>
+        </div>
     </div>
 
 

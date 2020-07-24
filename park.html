@@ -8,6 +8,7 @@
     <title>Park</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="./instascan.min.js"></script>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
     <script>
 
         var duration = 0;
@@ -31,10 +32,13 @@
                         var atts = content.substr(21).split(';');
                         if (atts.length >= 2) {
                             document.getElementById("parking-space-id").innerText = atts[1].charAt(0).toUpperCase() + atts[1].slice(1)
-                        parentNode.appendChild(scanIcon);
+                            parentNode.appendChild(scanIcon);
                             parentNode.removeChild(v);
                             scanner.stop()
                             scanner.removeAllListeners();
+
+                            //demo
+                            showStatus('available')
                             return
                         }
                     }
@@ -71,6 +75,18 @@
             if (!duration) {
                 duration = 0;
             }
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/ConfirmParkingHour",
+                data: "duration="+duration.toString()+"&username=demo01&gid="+document.getElementById("parking-space-id").innerText,
+                dataType: "json",
+                success: function (result) {
+                    console.log(result)
+                }, error: function (e) {
+                    console.log(e)
+                }
+            })
             alert('Successfully parked:' + duration + 'h')
             element.innerText = "Confirm modification!";
 
@@ -108,7 +124,9 @@
         }
         //月日时分秒小于10补0
         function p(s) { return s < 10 ? '0' + s : s; }
-
+        function showStatus(_status) {
+            document.getElementById('state').innerText = "Status： " + _status
+        }
     </script>
 </head>
 
