@@ -1,28 +1,4 @@
 @charset "utf-8"; 
-/* CSS Coded and Designed by Suyu */
-
-/* --------- RESET --------- */
-/* Don't forget to set a foreground and background color 
-   on the 'html' or 'body' element! */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dd,dl,dt,li,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{ margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-size:100%; line-height:1.2; font-family:微软雅黑, Arial, Helvetica, sans-serif; text-align:left; vertical-align:baseline; }
-a img,:link img,:visited img{ border:0; }
-table{  border-collapse:collapse; border-spacing:0; }
-ol,ul{ list-style:none; }
-q:before,q:after,blockquote:before,blockquote:after{ content:""; }
-
-/* --------- Universal --------- */
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-body{
-        /*background: url("./bg.jpg") no-repeat center;*/
-        background-color: #99CCFF;
-        background-size:100% 100%;
-        background-attachment: fixed;
-        padding-top: 25px;
-      }
 .container{
   width: 100%;
   text-align: center;
@@ -34,7 +10,7 @@ body{
   height: auto;
   width: auto\9;
 }
-div{margin: 10px;}
+/*div{margin: 10px;}*/
 .mainbody{
 	/*border: medium double rgb(0, 140, 255);*/
 	width: 300px;
@@ -43,72 +19,15 @@ div{margin: 10px;}
     background-color: white;
 	margin:auto
 }
-
-/* --------- Navs --------- */
-nav {
-  overflow: hidden;
-  background-color: #e9e9e9;
+/* --------- buttons --------- */
+button{
+  cursor: pointer;
+  outline: none;
 }
-
-nav a {
-  background-color: #FFF;
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 8px 4px;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 3px;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
-}
-
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-nav a.active {
-  background-color: #2196F3;
-  color: white;
-}
-
-
-/* --------- tabless --------- */
+/* --------- tables --------- */
 .td_left{vertical-align:middle;}
 .td_right{vertical-align:middle;}
 
-/* --------- Links --------- */
-a:link {color:#428bca;}		/* 未被访问的链接 */
-a:visited {color:#2196F3;}	/* 已被访问的链接 */
-a:hover {color:#900b09;}	/* 鼠标指针移动到链接上 */
-a:active {color:#900b09;}	/* 正在被点击的链接 */
-
-
-/* --------- buttons --------- */ 
-button,input{	
-	cursor: pointer;
-	outline: none; 
-}
-.button1:hover{background-color: #2196F3;}
-.button1 {  
-    width: 80px;  
-    padding:8px;  
-    background-color: #428bca;  
-    border-color: #357ebd;  
-    color: #fff;  
-    -moz-border-radius: 10px;  
-    -webkit-border-radius: 10px;  
-    border-radius: 10px; /* future proofing */  
-    text-align: center;  
-    vertical-align: middle;  
-    border: 1px;  
-    font-weight: 300;  
-    font-size:100% 
-
-}
-.button2 { width: 250px; }
 
 /* --------- Box Layout --------- */
 .layout{
@@ -135,29 +54,15 @@ button,input{
 	height:180px;
 	margin:auto;
 	margin-top: 20px;
-	padding: 10px;
+	padding: 15px;
 	border-radius: 10px;
 }
-
-/* --------- Header Tags --------- */
-h1,h2,h3,h4,h5,h6{ color:#000; font-weight:bolder; padding:10px 15px 0px 15px; }
-h1{ font-size:36px; }
-h2{ font-size:24px; }
-h3{ font-size:18px; }
-h4{ font-size:16px; }
-h5{ font-size:14px; }
-h6{ font-size:12px; }
-
-/* --------- Typography --------- */
-p{ font-size:medium; line-height:2; }
-ul,ol{ margin:25px; }
-ul li, ol li { padding-left:10px; }
-ul{ list-style:square inside; }
-ol{ list-style:decimal inside; }
-blockquote{ margin:15px; border-left:5px #FFDF00 solid; padding:7px; color:#fff; font-style:italic; }
-pre { margin:10px; border-left:5px #FFDF00 double; padding:10px; font-family:"Courier New", Courier, monospace; }
-
-
+/* --------- Alerts--------- */
+.alert{
+	color:#900b09;
+	font-weight:bolder;
+	font-size:14px;
+}
 
 .error {
 	color: red;
