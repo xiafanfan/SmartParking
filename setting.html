@@ -29,9 +29,16 @@
   <script defer src="lib/fontawesome-free-5.10.2-web/js/fontawesome.min.js"></script>
   <!-- Date picker -->
   <link href="lib/gijgo/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <script>
+    function init() {
+      document.getElementById("currentusername").innerHTML = sessionStorage.getItem('username');
+      document.getElementById("uname").value=sessionStorage.getItem('username');
+      document.getElementById("uemail").value=sessionStorage.getItem('username')+"@domain.com";
+    }
+  </script>
 </head>
 
-<body class="default">
+<body class="default" onload="init()">
   <!-- Preloading -->
   <div class="preloading">
     <div class="wrap-preload">
@@ -55,7 +62,7 @@
     </div>
     <ul class="list-unstyled components">
       <li>
-        <a href="myreservation.html"><i class="fas fa-home"></i>My Parking Place</a>
+        <a href="myreservation.html"><i class="fas fa-home"></i>My Reservation</a>
       </li>
 
       <li>
@@ -138,7 +145,7 @@
               <label>User name</label>
               <div class="field-group">
                 <i class="fas fa-user"></i>
-                <input type="text" class="form-control with-icon" value="Lillia Doe">
+                <input type="text" class="form-control with-icon" value="Lillia Doe" id="uname">
               </div>
             </div>
           </div>
@@ -156,7 +163,7 @@
               <label>Email</label>
               <div class="field-group">
                 <i class="fas fa-envelope"></i>
-                <input type="text" class="form-control with-icon" value="lilliadoe@domain.com">
+                <input type="text" class="form-control with-icon" value="lilliadoe@domain.com" id=uemail>
               </div>
             </div>
           </div>
