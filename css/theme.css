@@ -199,25 +199,6 @@ img {
 .btn-outline-secondary:hover {
   background-color: #2450a6; }
 
-ul.slick-dots li button {
-  width: 15px;
-  height: 5px;
-  background-color: #2450a6;
-  padding: 0px;
-  -webkit-border-radius: 90px;
-  -moz-border-radius: 90px;
-  border-radius: 90px;
-  opacity: 0.3; }
-
-ul.slick-dots li.slick-active button {
-  opacity: 1; }
-
-.slick-dots li {
-  margin: 0px 0px !important;
-  height: 15px !important; }
-.slick-dots li button:before {
-  font-size: 0px !important; }
-
 .content-wrap {
   max-width: 100%;
   margin: 0 auto;
@@ -923,22 +904,7 @@ a[data-toggle="collapse"] {
     margin-bottom: 0px; }
   #content .labelclock {
     padding-top: 8px; }
-  #content .img-hero {
-    margin-bottom: -15px;
-    overflow: hidden; }
-    #content .img-hero .slick-slide img {
-      width: 100%;
-      height: auto; }
-  #content .img-hero ul.slick-dots {
-    bottom: 20px; }
-  #content .img-hero ul.slick-dots li {
-    margin: 0px; }
-  #content .img-hero ul.slick-dots li button {
-    background-color: #ffffff; }
-  #content .img-hero ul.slick-dots li button:before {
-    color: #fff;
-    font-size: 0px; }
-
+ 
 .container-homepage {
   padding: 0px 15px; }
 
@@ -1061,155 +1027,6 @@ a[data-toggle="collapse"] {
       width: 30px;
       margin-bottom: 10px;
       height: auto; }
-
-/* HOMEPAGE AVAILABLE CAR */
-.available-car {
-  padding: 15px 0px;
-  position: relative; }
-  .available-car .heading-section .sa-title {
-    width: 100% !important; }
-  .available-car .slick-track {
-    margin: 0px 0px; }
-  .available-car .slick-prev {
-    right: 35px;
-    z-index: 3;
-    top: 90%;
-    left: auto; }
-  .available-car .slick-next {
-    right: 10px;
-    z-index: 3;
-    top: 90%; }
-  .available-car .slick-prev:before,
-  .available-car .slick-next:before {
-    color: #2450a6; }
-  .available-car .acr-box {
-    background-color: #ffffff;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-left: 15px;
-    width: 280px;
-    position: relative; }
-    .available-car .acr-box .acr-bg {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 0;
-      top: 0px;
-      left: 0px; }
-      .available-car .acr-box .acr-bg img {
-        width: 100%;
-        height: auto;
-        max-height: 9999999px;
-        opacity: 0.1;
-        position: absolute;
-        bottom: 0px; }
-    .available-car .acr-box .acr-box-in {
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      height: 170px; }
-      .available-car .acr-box .acr-box-in .acr-content {
-        padding: 20px 20px; }
-        .available-car .acr-box .acr-box-in .acr-content .ct-name {
-          font-size: 18px;
-          color: #2450a6;
-          font-weight: 600; }
-        .available-car .acr-box .acr-box-in .acr-content .ct-cost .cprice {
-          font-size: 24px;
-          font-weight: 600;
-          color: #df9403;
-          display: block; }
-        .available-car .acr-box .acr-box-in .acr-content .ct-cost .perday {
-          position: relative;
-          top: -5px;
-          margin-bottom: 10px;
-          display: block; }
-        .available-car .acr-box .acr-box-in .acr-content .ct-info {
-          padding: 10px 0px 0px;
-          position: relative; }
-          .available-car .acr-box .acr-box-in .acr-content .ct-info ul {
-            background-color: #ffffff;
-            margin-bottom: 20px;
-            display: inline-block;
-            float: left;
-            padding: 0px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px; }
-            .available-car .acr-box .acr-box-in .acr-content .ct-info ul li {
-              padding: 0px 5px 0px 0px;
-              display: inline-block; }
-              .available-car .acr-box .acr-box-in .acr-content .ct-info ul li img {
-                width: 20px;
-                height: auto;
-                display: inline; }
-        .available-car .acr-box .acr-box-in .acr-content .ct-reserve {
-          display: block;
-          clear: both; }
-      .available-car .acr-box .acr-box-in .acr-img {
-        width: 180px;
-        float: right;
-        margin-right: -40px;
-        margin-top: 40px;
-        position: absolute;
-        right: 0px; }
-        .available-car .acr-box .acr-box-in .acr-img img {
-          width: 100%; }
-      .available-car .acr-box .acr-box-in .acr-content {
-        width: 100%; }
-
-/* HOMEPAGE DESTINATION */
-.vacation-destination {
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 100%; }
-  .vacation-destination .heading-section {
-    padding-left: 15px;
-    padding-right: 15px; }
-  .vacation-destination .vs-carousel .item {
-    width: 250px;
-    padding-left: 15px; }
-    .vacation-destination .vs-carousel .item .vs-box .vsb-top {
-      position: relative; }
-      .vacation-destination .vs-carousel .item .vs-box .vsb-top .vsb-rating {
-        color: #df9403;
-        color: #fff;
-        position: absolute;
-        padding: 5px 8px;
-        background-color: #2450a6;
-        top: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        left: 10px; }
-        .vacation-destination .vs-carousel .item .vs-box .vsb-top .vsb-rating .fa-star {
-          color: #df9403; }
-      .vacation-destination .vs-carousel .item .vs-box .vsb-top .vsbt-img {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        overflow: hidden;
-        height: 150px; }
-        .vacation-destination .vs-carousel .item .vs-box .vsb-top .vsbt-img img {
-          width: 100%;
-          height: auto;
-          max-height: 99999999px; }
-    .vacation-destination .vs-carousel .item .vs-box .vsb-middle {
-      padding: 5px 0px;
-      font-weight: 600;
-      font-size: 15px; }
-      .vacation-destination .vs-carousel .item .vs-box .vsb-middle .vsbm-left {
-        color: #2450a6;
-        display: inline-block; }
-      .vacation-destination .vs-carousel .item .vs-box .vsb-middle .vsbm-right {
-        display: inline-block;
-        color: #df9403;
-        float: right; }
 
 /* HOMEPAGE NEWS */
 .section-home.home-news .home-news-wrap .more-category {

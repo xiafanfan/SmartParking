@@ -36,45 +36,8 @@
           $('#sidebarright').addClass('active'); 
       });
 
+    
 
-      /* HOMEPAGE - CAROUSEL SLIDER */
-      $('.img-hero').slick({
-        autoplay: true,
-        dots: true,
-        infinite: true,
-        arrows : false,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: false
-      });
-      
-      
-      /* DEFAULT CAROUSEL */
-      $('.default-carousel').slick({  
-      dots: false,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      centerMode: false,
-      arrows : false,
-      variableWidth: true
-    });
-
-
-    /* DATE PICKER */
-    $('.date-start-class').datepicker({
-        uiLibrary: 'bootstrap'
-    }); 
-    $('.date-end-class').datepicker({
-          uiLibrary: 'bootstrap'
-    });
-
-    /* TIME PICKER */
-      $('.timepicker').timepicker({
-        template: false,
-        showInputs: false,
-        minuteStep: 1
-      });
 
 
     /* GALLERY - FILTERING FUCTION */
@@ -97,12 +60,6 @@
           $(this).addClass('active');
       });
 
-
-    /* MAGNIFICPOPUP GALLERY */
-      $(".gallery-list").magnificPopup({
-              type: "image",
-              removalDelay: 300 
-          });
 
 
 })(jQuery);
