@@ -39,11 +39,18 @@
     function init() {
       document.getElementById("currentusername").innerHTML = sessionStorage.getItem('username');
       if (sessionStorage.getItem("arrivetime") && sessionStorage.getItem("duration") && sessionStorage.getItem("myparkplace")) {
-        document.getElementById("myparkplace").innerHTML = "Selected parking spaces: " + sessionStorage.getItem('myparkplace')
+        let myparkplace = sessionStorage.getItem('myparkplace')
+        document.getElementById("myparkplace").innerHTML = "Selected parking spaces: " + myparkplace;
         let st = sessionStorage.getItem("arrivetime");
         let du = sessionStorage.getItem("duration");
         document.getElementById("departuretime").innerHTML = dateToString(new Date(parseInt(st) + parseInt(du) * 3600 * 1000))
-        showBlocked(true, true)
+        if (myparkplace == 'A9') {
+          showBlocked(true, true)
+        } else if (myparkplace == 'A10') {
+          showBlocked(false, true)
+        } else {
+          showBlocked(false, false)
+        }
       } else {
         showBlocked(false, false)
       }
@@ -86,9 +93,6 @@
       if (!_status2) {
         let lab = document.getElementById('status2');
         lab.parentNode.removeChild(lab)
-      }
-      if (_status1 == false && _status2 == false) {
-        document.getElementById('blockstatus').innerText = "Your vehicle is not blocked"
       }
     }
   </script>
@@ -208,7 +212,7 @@
                   style="border-collapse:separate; border-spacing:0px 5px;background-color: white;border-radius: 5px;">
                   <div>
                     <tr id="status1">
-                      <td class="td_left"> A13 沪A12345<br> will leave 5h later</td>
+                      <td class="td_left"> A13 沪A12345<br> will leave 2h later</td>
                       <td class="td_right"><button class="theme-button mcbutton" onclick="call('沪A12345')">call</button>
                       </td>
                     </tr>
