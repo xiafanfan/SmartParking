@@ -45,7 +45,7 @@
             if (sessionStorage.getItem("reservedparkplace")) {
                 selectedspaceid = sessionStorage.getItem("reservedparkplace")
                 document.getElementById("parking-space-id").innerHTML = selectedspaceid;
-                document.getElementById("status").innerHTML = "available,reserved"
+                document.getElementById("status").innerHTML = "Available & Reserved"
             } if (sessionStorage.getItem("estimatedduration")) {
                 document.getElementById("duration").value = sessionStorage.getItem("estimatedduration")
             }
@@ -70,10 +70,10 @@
                             let newspaceid = atts[1].toUpperCase()
                             document.getElementById("parking-space-id").innerText = newspaceid
                             if (newspaceid != sessionStorage.getItem("reservedparkplace")) {
-                                document.getElementById("status").innerHTML = "available"
+                                document.getElementById("status").innerHTML = "Available"
                                 selectedspaceid = newspaceid
                             } else {
-                                document.getElementById("status").innerHTML = "available,reserved"
+                                document.getElementById("status").innerHTML = "Available & Reserved"
                             }
                             parentNode.appendChild(scanIcon);
                             parentNode.removeChild(v);
@@ -126,16 +126,26 @@
             sessionStorage.removeItem('estimatedduration')
             sessionStorage.removeItem('estimatedarrivetime')
             alert('Successfully parked:' + duration + 'h')
-            element.innerText = "Confirm modification!";
+            element.innerText = "Confirm Modification";
             var p1 = document.createElement("p")
-            p1.innerText = "Parking duration :  " + duration + ' hour(s)'
-            p1.id = 'durationLabel'
+            p1.innerText = "Parking duration  " 
+            var p3 = document.createElement("p")
+            p3.innerText = duration + ' hour(s)'
+            p3.id = 'durationLabel'
+            p1.style="font-weight:bold;"
             var p2 = document.createElement("p")
-            p2.innerText = "Planned departure time: " + dateToString(new Date(now + duration * 3600 * 1000))
-            p2.id = 'leaveTimeLabel'
+            p2.innerText = "Planned departure time " 
+            var p4 = document.createElement("p")
+            p4.innerText =dateToString(new Date(now + duration * 3600 * 1000))
+            p4.id = 'leaveTimeLabel'
+            p2.style="font-weight:bold;"
+            
             document.getElementById('state').parentNode.appendChild(p1);
+            document.getElementById('state').parentNode.appendChild(p3);
             document.getElementById('state').parentNode.appendChild(p2);
+            document.getElementById('state').parentNode.appendChild(p4);
             document.getElementById('state').parentNode.removeChild(document.getElementById('state'));
+            document.getElementById('status').parentNode.removeChild(document.getElementById('status'));
             document.getElementById('scanContainer').parentNode.removeChild(document.getElementById('scanContainer'));
 
             element.onclick = changeDuration;
@@ -155,8 +165,8 @@
             sessionStorage.removeItem('estimatedduration')
             sessionStorage.removeItem('estimatedarrivetime')
             alert("parking time has been modified as: " + duration + 'h');
-            document.getElementById('durationLabel').innerText = "Parking duration :  " + duration + ' hour(s)'
-            document.getElementById('leaveTimeLabel').innerText = "Planned departure time: " + dateToString(new Date(now + duration * 3600 * 1000))
+            document.getElementById('durationLabel').innerText =  duration + ' hour(s)'
+            document.getElementById('leaveTimeLabel').innerText =  dateToString(new Date(now + duration * 3600 * 1000))
         }
         function dateToString(time) {
             year = time.getFullYear();//年
@@ -275,13 +285,17 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="layout">
-                            <p>Selected parking spaces: <label id="parking-space-id">-</label></p>
-                            <p id='state'>Status: <label id="status">-</label></p>
-                            <p>Time: <lable id="nowtime"></lable>
-                            </p>
-                            <div id='scanContainer'
-                                style="width:120px;height: 120px;border: solid;overflow: hidden;margin:auto;display: flex;justify-content: center;align-items: center;">
+                        <div class="Messbox">
+                            <p style="font-weight: bold;">Selected parking spaces</p>
+                            <p><label id="parking-space-id">-</label></p>
+                            <p id="time" style="font-weight: bold;">Time now</p>
+                            <p><lable id="nowtime"></lable></p>
+                        </div>
+                        <div class="Messbox">
+                            <p id="state" style="font-weight: bold;">Status</p>
+                            <p><label id="status">-</label></p>
+                            <div id="scanContainer"
+                                style="width:120px;height: 120px;border: none;overflow: hidden;margin:auto;display: flex;justify-content: center;align-items: center;">
                                 <button id='scan' onclick="scanQR()"
                                     style="width: 120px;height:120px;border: none; background: url('./css/scan.png') no-repeat center;">
                                 </button>
@@ -297,7 +311,7 @@
                         <div>
                             <button class="theme-button mcbutton" onclick="park(this)"
                                 style="display: block; margin:auto;">
-                                Confirm parking!
+                                Confirm Parking
                             </button>
                         </div>
 
