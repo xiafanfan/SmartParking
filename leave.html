@@ -40,7 +40,7 @@
       document.getElementById("currentusername").innerHTML = sessionStorage.getItem('username');
       if (sessionStorage.getItem("arrivetime") && sessionStorage.getItem("duration") && sessionStorage.getItem("myparkplace")) {
         let myparkplace = sessionStorage.getItem('myparkplace')
-        document.getElementById("myparkplace").innerHTML = "Selected parking spaces: " + myparkplace;
+        document.getElementById("myparkplace").innerHTML = myparkplace;
         let st = sessionStorage.getItem("arrivetime");
         let du = sessionStorage.getItem("duration");
         document.getElementById("departuretime").innerHTML = dateToString(new Date(parseInt(st) + parseInt(du) * 3600 * 1000))
@@ -198,14 +198,15 @@
         <div class="row">
           <div class="col-md-12">
             <div class="Messbox">
-              <p id="myparkplace">Selected parking spaces: -</p>
-              <p>Time: <lable id="nowtime"></lable>
-              </p>
-              <p id="time">Estimate to departure at: <lable id="departuretime">-</label>
-              </p>
+              <p style="font-weight: bold;">Selected parking spaces</p>
+              <p id="myparkplace"> -</p>
+              <p style="font-weight: bold;">Time now</p>
+              <p> <lable id="nowtime"></lable></p>
+              <p style="font-weight: bold;">Estimate to departure at<p>
+              <p> <lable id="departuretime">-</label></p>
             </div>
             <div class="Messbox">
-              <div>Vehicle's current blocked status: </div>
+              <div><p style="font-weight: bold;">Vehicle's current blocked status</p> </div>
               <br>
               <div style="margin-left: 6px;">
                 <table
