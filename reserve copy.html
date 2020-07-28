@@ -30,52 +30,52 @@
 
     .horzontal div input {
       width: 100%;
-      height: 35px;
+      height: 30px;
     }
 
     .vertical div input {
       width: 100%;
-      height: 73px;
+      height: 63px;
     }
 
     .flexible div input {
-      border: solid 4px rgb(255, 217, 0);
+      border: solid rgb(255, 217, 0);
     }
 
     ._available {
-      background-color: #7ed7ca;
+      background-color: rgb(119, 179, 134);
       border: none;
     }
 
     ._unavailable {
-      background-color: #ebb6b9;
+      background-color: rgb(255, 162, 149);
       pointer-events: none;
       border: none;
     }
 
     ._unready {
-      background-color: rgb(156, 157, 142);
+      background-color: rgb(120, 120, 120);
       pointer-events: none;
     }
 
     .green {
       width: 45px;
       height: 18px;
-      background-color: #7ed7ca;
+      background-color: rgb(119, 179, 134);
       margin: 1px;
     }
 
     .red {
       width: 45px;
       height: 18px;
-      background-color: #ebb6b9;
+      background-color: rgb(255, 162, 149);
       margin: 1px;
     }
 
     .gray {
       width: 45px;
       height: 18px;
-      background-color: rgb(156, 157, 142);
+      background-color: rgb(120, 120, 120);
       margin: 1px;
     }
 
@@ -118,7 +118,7 @@
     }
     function init() {
       document.getElementById("currentusername").innerHTML = sessionStorage.getItem('username');
-      lastselected = "A1";
+      lastselected = "";
       document.getElementById(lastselected).style.color = "#FFF";
       document.getElementById(lastselected).style.border = "3px solid #063";
       document.getElementById(lastselected).style.fontWeight = 'bold';
@@ -226,7 +226,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="subsite-heading">
-              Press to make your reservation
+              Press to make your reservation!
             </div>
             <div><br></div>
           </div>
@@ -241,145 +241,141 @@
                       <td>
                         <div class="green"></div>
                       </td>
-                      <td style="color: #282f48">Available</td>
+                      <td style="color: #2450A6">Available</td>
                       <td>
                         <div class="red"></div>
                       </td>
-                      <td style="color: #282f48">Occupied</td>
+                      <td style="color: #2450A6">Occupied</td>
                     </tr>
+
                     <tr>
                       <td>
                         <div class="gray"></div>
                       </td>
-                      <td style="color: #282f48">Unready</td>
+                      <td style="color: #2450A6">Unready</td>
                       <td>
                         <div class="flex"></div>
                       </td>
-                      <td style="color: #282f48">Flexible</td>
+                      <td style="color: #2450A6">Flexible</td>
                     </tr>
                   </div>
                 </table>
               </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="layout" style="margin-top: 20px;margin-bottom: 40px">
-                    <span style="width: 85px;display:inline-block;" class="horzontal">
-                      <div>
-                        <input type="button" id="A1" onclick="selectspace(this)" class="_available" value="A1"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A2" onclick="selectspace(this)" class="_unavailable"
-                          value="A2"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A3" onclick="selectspace(this)" class="_available" value="A3"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A4" onclick="selectspace(this)" class="_available" value="A4"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A5" onclick="selectspace(this)" class="_unavailable"
-                          value="A5"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A6" onclick="selectspace(this)" class="_available" value="A6"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A7" onclick="selectspace(this)" class="_unavailable"
-                          value="A7"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A8" onclick="selectspace(this)" class="_available" value="A8"></input>
-                      </div>
 
-                    </span>
-                    <span style="width: 40px;display: inline-block; float:right;" class="vertical">
-                      <div>
-                        <input type="button" id="A9" onclick="selectspace(this)" class="_available" value="A9"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A10" onclick="selectspace(this)" class="_available"
-                          value="A10"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A11" onclick="selectspace(this)" class="_unavailable"
-                          value="A11"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A12" onclick="selectspace(this)" class="_unavailable"
-                          value="A12"></input>
-                      </div>
-                    </span>
-                    <span style="width: 45px;display: inline-block; float:right;" class="vertical flexible">
-                      <div>
-                        <input type="button" id="A13" onclick="selectspace(this)" class="_unready" value="A13"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A14" onclick="selectspace(this)" class="_unready" value="A14"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A15" onclick="selectspace(this)" class="_unavailable"
-                          value="A15"></input>
-                      </div>
-                      <div>
-                        <input type="button" id="A16" onclick="selectspace(this)" class="_available"
-                          value="A16"></input>
-                      </div>
-                    </span>
-                  </div>
-                  <br>
+              <div class="layout" style="margin-top: 20px;">
+                <span style="width: 70px;display:inline-block;" class="horzontal">
                   <div>
-                    <a href="myreservation.html">
-                      <button class="theme-button mcbutton" onclick="reserve()" style="display: block; margin:auto;">
-                        Confirm reservation
-                      </button>
-                    </a>
+                    <input type="button" id="A1" onclick="selectspace(this)" class="_unavailable" value="A1"></input>
                   </div>
-                </div>
+                  <div>
+                    <input type="button" id="A2" onclick="selectspace(this)" class="_unavailable" value="A2"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A3" onclick="selectspace(this)" class="_unavailable" value="A3"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A4" onclick="selectspace(this)" class="_unavailable" value="A4"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A5" onclick="selectspace(this)" class="_unavailable" value="A5"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A6" onclick="selectspace(this)" class="_unavailable" value="A6"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A7" onclick="selectspace(this)" class="_unavailable" value="A7"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A8" onclick="selectspace(this)" class="_unavailable" value="A8"></input>
+                  </div>
+
+                </span>
+                <span style="width: 35px;display: inline-block; float:right;" class="vertical">
+                  <div>
+                    <input type="button" id="A9" onclick="selectspace(this)" class="_unavailable" value="A9"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A10" onclick="selectspace(this)" class="_unavailable" value="A10"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A11" onclick="selectspace(this)" class="_unavailable" value="A11"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A12" onclick="selectspace(this)" class="_unavailable" value="A12"></input>
+                  </div>
+                </span>
+                <span style="width: 40px;display: inline-block; float:right;" class="vertical flexible">
+                  <div>
+                    <input type="button" id="A13" onclick="selectspace(this)" class="_unavailable" value="A13"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A14" onclick="selectspace(this)" class="_unavailable" value="A14"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A15" onclick="selectspace(this)" class="_unavailable" value="A15"></input>
+                  </div>
+                  <div>
+                    <input type="button" id="A16" onclick="selectspace(this)" class="_unavailable" value="A16"></input>
+                  </div>
+                </span>
+              </div>
+              <br>
+              <div style="text-align: center;">
+                <p id="hint">All parking place at Microsoft is Occupied!</p>
+              </div>
+              <div style="text-align: center;">
+                <p class="subsite-heading">Reserve a plaking place at Lenovo --></p>
+              </div>
+              <div>
+                <a href="myreservation.html">
+                  <button class="theme-button mcbutton" onclick="reserve()" style="display: block; margin:auto;font-size: 15px;">
+                    Confirm reservation!
+                  </button>
+                </a>
               </div>
             </div>
+
           </div>
         </div>
-      </div>
-      <!-- .Content  -->
-      <!-- Botom Panel  -->
-      <div class="bottom-panel">
-        <div class="bp-col">
-          <a href="reserve.html">
-            <div class="bp-icon"><img src="img/reserve.png" alt="icon"> </div>
-            <div class="bp-text">Reserve</div>
-          </a>
+        <!-- .Content  -->
+        <!-- Botom Panel  -->
+        <div class="bottom-panel">
+          <div class="bp-col">
+            <a href="reserve.html">
+              <div class="bp-icon"><img src="img/reserve.png" alt="icon"> </div>
+              <div class="bp-text">Reserve</div>
+            </a>
+          </div>
+          <div class="bp-col">
+            <a href="park.html">
+              <div class="bp-icon"><img src="img/ipcar.png" alt="icon"></div>
+              <div class="bp-text">Park</div>
+            </a>
+          </div>
+          <div class="bp-col">
+            <a href="leave.html">
+              <div class="bp-icon"><img src="img/leave.png" alt="icon"></div>
+              <div class="bp-text">Leave</div>
+            </a>
+          </div>
+          <div class="bp-col">
+            <a href="setting.html">
+              <div class="bp-icon"><img src="img/ipaccount.png" alt="icon"></div>
+              <div class="bp-text">Account</div>
+            </a>
+          </div>
         </div>
-        <div class="bp-col">
-          <a href="park.html">
-            <div class="bp-icon"><img src="img/ipcar.png" alt="icon"></div>
-            <div class="bp-text">Park</div>
-          </a>
-        </div>
-        <div class="bp-col">
-          <a href="leave.html">
-            <div class="bp-icon"><img src="img/leave.png" alt="icon"></div>
-            <div class="bp-text">Leave</div>
-          </a>
-        </div>
-        <div class="bp-col">
-          <a href="setting.html">
-            <div class="bp-icon"><img src="img/ipaccount.png" alt="icon"></div>
-            <div class="bp-text">Account</div>
-          </a>
-        </div>
-      </div>
-      <!-- .Bottom Panel  -->
-      <div class="overlay"></div>
-      <!-- Optional JavaScript -->
-      <!-- jQuery v3.4.1 -->
-      <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
-      <!--  Bootstrap v4.3.1 JS -->
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-      <!--  Custom JS -->
-      <script src="js/theme.js"></script>
+        <!-- .Bottom Panel  -->
+        <div class="overlay"></div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery v3.4.1 -->
+        <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+        <!--  Bootstrap v4.3.1 JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+        <!--  Custom JS -->
+        <script src="js/theme.js"></script>
 </body>
 
 </html>
