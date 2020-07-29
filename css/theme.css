@@ -83,8 +83,8 @@ textarea {
 .btn-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle,
 .btn-primary {
-  background-color: #282f48;
-  border-color: #282f48; }
+  background-color: #3f48cc;
+  border-color: #3f48cc; }
 
 body a,
 body a:hover {
@@ -95,7 +95,7 @@ body.noscroll {
   overflow: hidden; }
 
 .btn {
-  background-color: #282f48;
+  background-color: #3f48cc;
   color: #ffffff; }
 
 .button {
@@ -123,7 +123,7 @@ img {
   text-align: center; }
 
 .theme-button {
-  background-color: #282f48;
+  background-color: #3f48cc;
   padding: 5px 15px;
   color: #fff;
   cursor: pointer;
@@ -160,28 +160,28 @@ img {
   content: "\f152"; }
 
 .gj-picker-bootstrap table tr td.selected.gj-cursor-pointer div {
-  background-color: #282f48 !important;
-  border-color: #282f48 !important; }
+  background-color: #3f48cc !important;
+  border-color: #3f48cc !important; }
 
 .gj-picker-bootstrap table tr td.today div {
-  color: #282f48 !important; }
+  color: #3f48cc !important; }
 
 .line {
   clear: both;
   height: 2px;
   width: 20px;
   margin: 10px auto 0px;
-  background-color: #282f48; }
+  background-color: #3f48cc; }
 
 .theme-button-line {
-  border: 1px solid #282f48;
+  border: 1px solid #3f48cc;
   background-color: transparent;
   padding: 3px 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
-  color: #282f48; }
+  color: #3f48cc; }
 
 .line-separate {
   width: 100%;
@@ -197,7 +197,7 @@ img {
   color: #ffffff; }
 
 .btn-outline-secondary:hover {
-  background-color: #282f48; }
+  background-color: #3f48cc; }
 
 .content-wrap {
   max-width: 100%;
@@ -242,7 +242,7 @@ img {
     text-align: center; }
     .share-button li a {
       padding: 2px 5px;
-      background-color: #282f48;
+      background-color: #3f48cc;
       color: #ffffff;
       width: 25px;
       height: 25px;
@@ -254,7 +254,7 @@ img {
     padding-right: 5px; }
 
 body .form-control:focus {
-  border-color: #282f48;
+  border-color: #3f48cc;
   outline: 0;
   -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0);
   box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0); }
@@ -311,7 +311,7 @@ body .form-control:focus {
     max-width: 99999px; } }
 .subsite-heading {
   text-align: center;
-  color: #282f48;
+  color: #3f48cc;
   font-size: 18px;
   width: 100%;
   font-weight: 600;
@@ -439,10 +439,10 @@ form .input-group > .form-control:not(:last-child) {
 .pagination {
   margin-top: 20px; }
   .pagination .page-link {
-    color: #282f48; }
+    color: #3f48cc; }
   .pagination .page-item.active .page-link {
-    background-color: #282f48;
-    border-color: #282f48; }
+    background-color: #3f48cc;
+    border-color: #3f48cc; }
 
 /*==================================================
 2. PRELOADER
@@ -459,7 +459,7 @@ form .input-group > .form-control:not(:last-child) {
   left: 0; }
 
 .preloading .wrap-preload {
-  background-color: #282f48;
+  background-color: #3f48cc;
   display: table-cell;
   text-align: center;
   vertical-align: middle; }
@@ -544,7 +544,7 @@ form .input-group > .form-control:not(:last-child) {
   left: 0px;
   height: 56px;
   width: 100%;
-  background-color: #282f48;
+  background-color: #3f48cc;
   border-bottom: 0px solid #ddd; }
 
 .navbar {
@@ -574,7 +574,7 @@ form .input-group > .form-control:not(:last-child) {
         right: -3px;
         z-index: 22;
         color: #22e3c5;
-        border: 1px solid #282f48;
+        border: 1px solid #3f48cc;
         border-radius: 100%; }
   .navbar .logo {
     height: 30px;
@@ -659,7 +659,7 @@ form .input-group > .form-control:not(:last-child) {
   left: -250px;
   height: 100vh;
   z-index: 999;
-  background-color: #282f48;
+  background-color: #3f48cc;
   color: #fff;
   transition: all 0.3s;
   overflow: auto; }
@@ -716,7 +716,7 @@ form .input-group > .form-control:not(:last-child) {
 
 #sidebarleft .sidebar-header {
   padding: 20px;
-  background-color: #282f48; }
+  background-color: #3f48cc; }
 
 #sidebarleft ul {
   padding: 10px 0px; }
@@ -751,7 +751,7 @@ a[data-toggle="collapse"] {
   top: 0;
   height: 100vh;
   z-index: 999;
-  background-color: #282f48;
+  background-color: #3f48cc;
   color: #fff;
   transition: all 0.3s;
   overflow: auto; }
@@ -864,7 +864,7 @@ a[data-toggle="collapse"] {
 ----------------------------------------------------- */
 .bottom-panel {
   height: 70px;
-  background-color: #282f48;
+  background-color: #3f48cc;
   width: 100%;
   border-top: 0px solid #ddd;
   position: fixed;
@@ -929,7 +929,7 @@ a[data-toggle="collapse"] {
     width: 100%;
     line-height: 1; }
   .heading-section .sa-title {
-    color: #282f48;
+    color: #3f48cc;
     font-size: 18px;
     margin-bottom: 5px;
     font-weight: 600; }
@@ -1057,7 +1057,7 @@ a[data-toggle="collapse"] {
         -moz-border-radius: 10px;
         border-radius: 10px; }
     .section-home.home-news .home-news-wrap .news-item .news-content .hnw-desc .more {
-      color: #282f48; }
+      color: #3f48cc; }
 
 /*==================================================
 7. BOOKING 
@@ -1065,14 +1065,14 @@ a[data-toggle="collapse"] {
 .gj-picker-md [role="header"],
 .gj-picker-md .arrow-begin,
 .gj-picker-md [role="body"] [role="arrow"] {
-  background: #282f48 !important;
-  background-color: #282f48 !important; }
+  background: #3f48cc !important;
+  background-color: #3f48cc !important; }
 
 .gj-picker-md .arrow-end {
-  border: 16px solid #282f48 !important; }
+  border: 16px solid #3f48cc !important; }
 
 .gj-picker-md [role="footer"] button.gj-button-md {
-  color: #282f48 !important; }
+  color: #3f48cc !important; }
 
 .gj-timepicker .form-control {
   display: block !important;
@@ -1116,11 +1116,11 @@ a[data-toggle="collapse"] {
   margin-bottom: 5px; }
 
 .section-subscribe .subcontainer .submitsub {
-  background-color: #282f48;
+  background-color: #3f48cc;
   position: absolute;
   color: #ffffff;
   font-size: 18px;
-  border: 1px solid #282f48;
+  border: 1px solid #3f48cc;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -1152,7 +1152,7 @@ a[data-toggle="collapse"] {
 
 .section-subscribe .mail-subscribe-box input {
   color: #303030;
-  border: 1px solid #282f48;
+  border: 1px solid #3f48cc;
   height: 50px;
   background: #ffffff;
   -webkit-border-radius: 90px;
@@ -1166,7 +1166,7 @@ a[data-toggle="collapse"] {
   position: absolute;
   color: #95b700;
   font-size: 18px;
-  border: 1px solid #282f48;
+  border: 1px solid #3f48cc;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -1241,10 +1241,10 @@ a[data-toggle="collapse"] {
   text-align: center;
   font-size: 14px;
   font-weight: 600;
-  color: #282f48;
+  color: #3f48cc;
   line-height: 1.2; }
 .page-cart .chart-car-price {
-  background-color: #282f48;
+  background-color: #3f48cc;
   text-align: center;
   font-size: 14px;
   margin: 7px auto;
@@ -1328,7 +1328,7 @@ a[data-toggle="collapse"] {
 .page-my-rides .db {
   text-align: center;
   margin: 20px 0px;
-  color: #282f48;
+  color: #3f48cc;
   text-decoration: underline; }
 .page-my-rides .mr-car-box-wrap {
   position: relative;
@@ -1347,10 +1347,10 @@ a[data-toggle="collapse"] {
       text-align: center;
       font-size: 18px;
       font-weight: 600;
-      color: #282f48;
+      color: #3f48cc;
       line-height: 1.2; }
     .page-my-rides .mr-car-box-wrap .mr-car-box .mr-car-code {
-      background-color: #282f48;
+      background-color: #3f48cc;
       text-align: center;
       font-size: 14px;
       margin: 0px auto;
@@ -1403,7 +1403,7 @@ a[data-toggle="collapse"] {
     padding-left: 25px; }
   .page-my-rides .trip .tl-location {
     font-weight: 600;
-    color: #282f48; }
+    color: #3f48cc; }
   .page-my-rides .trip .tl-date {
     font-size: 12px; }
   .page-my-rides .trip .tl-time {
@@ -1494,7 +1494,7 @@ a[data-toggle="collapse"] {
       width: 100%; }
   .destination-card .dc-right .dcr-row-a {
     font-weight: 600;
-    color: #282f48; }
+    color: #3f48cc; }
   .destination-card .dc-right .dcr-row-b {
     display: -webkit-box;
     max-width: 100%;
@@ -1551,7 +1551,7 @@ a[data-toggle="collapse"] {
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 600;
-      color: #282f48; }
+      color: #3f48cc; }
     .news-card .nc-top .nc-right .ncr-row-b {
       display: -webkit-box;
       max-width: 100%;
@@ -1652,7 +1652,7 @@ a[data-toggle="collapse"] {
   .gallery-section .filter-gallery {
     text-align: center; }
   .gallery-section .filter-button {
-    color: #282f48;
+    color: #3f48cc;
     background: transparent;
     padding: 10px 5px;
     font-weight: 600;
@@ -1677,7 +1677,7 @@ a[data-toggle="collapse"] {
   margin: 20px 0px; }
 .page-register a {
   text-decoration: underline;
-  color: #282f48; }
+  color: #3f48cc; }
 .page-register .register-submit {
   margin: 30px 0px; }
 .page-register .have-a-account {
@@ -1691,7 +1691,7 @@ a[data-toggle="collapse"] {
   margin: 20px 0px; }
 .page-login a {
   text-decoration: underline;
-  color: #282f48; }
+  color: #3f48cc; }
 .page-login .login-submit {
   margin: 30px 0px; }
 .page-login .text-with-link {
@@ -1746,7 +1746,7 @@ a[data-toggle="collapse"] {
         color: #9f9f9f; }
       .single-car-box .scb-left .scbl .scbl-rb {
         font-weight: 600;
-        color: #282f48; }
+        color: #3f48cc; }
       .single-car-box .scb-left .scbl .scbl-rc img {
         width: 30px;
         margin: 5px 0px 0px; }
@@ -1794,7 +1794,7 @@ a[data-toggle="collapse"] {
     .page-car-single .btn-reserve .theme-button {
       padding: 10px 20px; }
   .page-car-single .price .price-value {
-    color: #282f48;
+    color: #3f48cc;
     font-size: 24px;
     font-weight: 600;
     line-height: 1; }
@@ -1807,7 +1807,7 @@ a[data-toggle="collapse"] {
 .page-profile .cf-heading {
   padding: 10px 15px;
   font-weight: 600;
-  color: #282f48; }
+  color: #3f48cc; }
 .page-profile .row-avatar {
   padding: 0px 15px;
   margin-top: -60px;
@@ -1837,7 +1837,7 @@ a[data-toggle="collapse"] {
       display: table-cell;
       vertical-align: middle; }
       .page-profile .probox .bx-col .bx-col-in .count {
-        color: #282f48;
+        color: #3f48cc;
         font-weight: 600;
         font-size: 18px; }
 .page-profile .row-info-profile .proname {
@@ -1845,7 +1845,7 @@ a[data-toggle="collapse"] {
   font-size: 18px;
   text-align: center;
   margin: 10px 0px 0px;
-  color: #282f48; }
+  color: #3f48cc; }
 .page-profile .row-info-profile .proname-info {
   text-align: center; }
 .page-profile .row-info-profile .pro-des {
@@ -1863,7 +1863,7 @@ a[data-toggle="collapse"] {
       display: table;
       text-align: center;
       color: #ffffff;
-      background-color: #282f48;
+      background-color: #3f48cc;
       -webkit-border-radius: 90%;
       -moz-border-radius: 90%;
       border-radius: 90%;
@@ -1906,7 +1906,7 @@ a[data-toggle="collapse"] {
 .footer {
   padding: 20px 35px;
   height: 100px;
-  background-color: #282f48;
+  background-color: #3f48cc;
   text-align: center;
   color: #ffffff; }
 
@@ -1937,7 +1937,7 @@ a[data-toggle="collapse"] {
 .footer .socmed .socmed-line .socmed-item .si-icon {
   display: table-cell;
   vertical-align: middle;
-  color: #282f48; }
+  color: #3f48cc; }
 
 /*==================================================
 25. PREVIEW
@@ -1962,7 +1962,7 @@ body.preview {
     position: relative;
     z-index: 2; }
   body.preview .here {
-    background-color: #282f48;
+    background-color: #3f48cc;
     color: #ffffff;
     padding: 5px 15px;
     -webkit-border-radius: 90px;
@@ -1989,7 +1989,7 @@ body.preview {
     padding: 0px 20px;
     font-size: 40px;
     font-weight: 800;
-    color: #282f48; }
+    color: #3f48cc; }
   body.preview .pr-tagline {
     display: inline-block;
     font-size: 27px; }
@@ -2011,7 +2011,7 @@ body.preview {
     width: 150px;
     height: auto; }
   body.preview .buy-now .bn {
-    background: #282f48;
+    background: #3f48cc;
     color: #ffffff;
     font-weight: 600;
     padding: 10px 30px;
