@@ -23,58 +23,58 @@
   <script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.10.2/js/fontawesome.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <style type="text/css">
-    span div {
+     span div {
       margin: 3px;
     }
 
     .horzontal div input {
       width: 100%;
-      height: 30px;
+      height: 35px;
     }
 
     .vertical div input {
       width: 100%;
-      height: 63px;
+      height: 73px;
     }
 
     .flexible div input {
-      border: solid rgb(255, 217, 0);
+      border: solid 4px rgb(255, 217, 0);
     }
 
     ._available {
-      background-color: rgb(119, 179, 134);
+      background-color: #7ed7ca;
       border: none;
     }
 
     ._unavailable {
-      background-color: rgb(255, 162, 149);
+      background-color: #ebb6b9;
       pointer-events: none;
       border: none;
     }
 
     ._unready {
-      background-color: rgb(120, 120, 120);
+      background-color: rgb(156, 157, 142);
       pointer-events: none;
     }
 
     .green {
       width: 45px;
       height: 18px;
-      background-color: rgb(119, 179, 134);
+      background-color: #7ed7ca;
       margin: 1px;
     }
 
     .red {
       width: 45px;
       height: 18px;
-      background-color: rgb(255, 162, 149);
+      background-color: #ebb6b9;
       margin: 1px;
     }
 
     .gray {
       width: 45px;
       height: 18px;
-      background-color: rgb(120, 120, 120);
+      background-color: rgb(156, 157, 142);
       margin: 1px;
     }
 
@@ -95,6 +95,7 @@
 
     div input {
       outline: none;
+      vertical-align: middle;
     }
   </style>
   <script>
@@ -225,7 +226,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="subsite-heading">
-              Press to make your reservation!
+              Press to make your reservation
             </div>
             <div><br></div>
           </div>
@@ -262,7 +263,7 @@
               </div>
 
               <div class="layout" style="margin-top: 20px;">
-                <span style="width: 70px;display:inline-block;" class="horzontal">
+                <span style="width: 85px;display:inline-block;" class="horzontal">
                   <div>
                     <input type="button" id="A1" onclick="selectspace(this)" class="_unavailable" value="A1"></input>
                   </div>
@@ -289,7 +290,7 @@
                   </div>
 
                 </span>
-                <span style="width: 35px;display: inline-block; float:right;" class="vertical">
+                <span style="width: 40px;display: inline-block; float:right;" class="vertical">
                   <div>
                     <input type="button" id="A9" onclick="selectspace(this)" class="_unavailable" value="A9"></input>
                   </div>
@@ -303,7 +304,7 @@
                     <input type="button" id="A12" onclick="selectspace(this)" class="_unavailable" value="A12"></input>
                   </div>
                 </span>
-                <span style="width: 40px;display: inline-block; float:right;" class="vertical flexible">
+                <span style="width: 45px;display: inline-block; float:right;" class="vertical flexible">
                   <div>
                     <input type="button" id="A13" onclick="selectspace(this)" class="_unavailable" value="A13"></input>
                   </div>
@@ -320,15 +321,15 @@
               </div>
               <br>
               <div style="text-align: center;">
-                <p id="hint">All parking place at Microsoft is Occupied!</p>
+                <p id="hint">All parking space at Microsoft is Occupied!</p>
               </div>
               <div style="text-align: center;">
-                <p class="subsite-heading">Reserve a plaking place at Lenovo --></p>
+                <p class="subsite-heading">Reserve a plaking space at Lenovo --></p>
               </div>
               <div>
                 <a href="myreservation.html">
                   <button class="theme-button mcbutton" onclick="reserve()" style="display: block; margin:auto;font-size: 15px;">
-                    Confirm reservation!
+                    Confirm Reservation
                   </button>
                 </a>
               </div>
