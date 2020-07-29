@@ -12,12 +12,14 @@ The regular reserve function is designed to allow users to make a reservation be
 systemreserve.png<br><br>
 ### Temporary reservation
 If you miss the regular reservation time and will arrive within 10 minutes, you are supposed to reserve temporarily. Choose the available place and confirm, our system will reserve the parking place for you in the future 10 minutes. <br>
-In a future version, we would be possible to cooperate with other companies in the software park. When there is no spared space in our own parking lot, we may have an additional choice to take a look at those of others.<br><br>
+    In a future version, we would be possible to cooperate with other companies in the software park. 
+When there is no spared space in our own parking lot, we may have an additional choice to take a look at those of others.<br><br>
 #### image
 reserve.png<br> reservation.png<br><br>
 ### Parking status
-In a future version, we would be likely to give precise guidance to the exact place.<br>
-When you arrive at the parking lot, we recommend that you scan the QR code to cancel the reservation and confirm the parking duration. Certainly, you have the right to change the duration at any time before you leave. After completing the above process, the entire parking process is completed.<br>In the future version, we may change the QR code into some IoT devices if conditions permit.<br><br>
+    In a future version, we would be likely to give precise guidance to the exact place.<br>
+When you arrive at the parking lot, we recommend that you scan the QR code to cancel the reservation and confirm the parking duration. Certainly, you have the right to change the duration at any time before you leave. After completing the above process, the entire parking process is completed.<br>
+    In a future version, we may change the QR code into some IoT devices if conditions permit.<br><br>
 #### image
 parkingduration.png<br> modifypark.png<br>
 ### Notifications
