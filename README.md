@@ -6,12 +6,12 @@ This project is about the reservation and allocation of the parking lots. The pr
 We suppose users register and log in with an enterprise email account for instant contact.<br><br>
 #### image
 login.png<br> signup.png<br> resetpassword.png<br> setting.png <br><br>
-### Automated reservation
-The automated reserve function is designed to allow users to make a reservation before 7:30 a.m. every day, and the system will recommend the best choice according to the available parking spaces and the duration that all reserved users have applied for. However, there is always a time when you are not satisfied with the place we recommended. You are allowed to stick to your preferred choice as long as it is still available at that time, which may possibly cause unnecessary trouble to be disturbed for moving your car. We will then adjust our recommendation options to the following users.<br><br>
+### Regualr reservation
+The regualr reserve function is designed to allow users to make a reservation before 7:30 a.m. every day, and the system will recommend the best choice according to the available parking spaces and the duration that all reserved users have applied for. However, there is always a time when you are not satisfied with the place we recommended. You are allowed to stick to your preferred choice as long as it is still available at that time, which may possibly cause unnecessary trouble to be disturbed for moving your car. We will then adjust our recommendation options to the following users.<br><br>
 #### image
 systemreserve.png<br><br>
-### Manual reservation
-If you miss the automated reservation time and will arrive within 10 minutes, you are supposed to use the manual reserve page. Choose the available place and confirm, our system will reserve the parking place for you in the future 10 minutes and in a future version, we would be likely to give precise guidance to the exact place.<br><br>
+### Temporary reservation
+If you miss the temporary reservation time and will arrive within 10 minutes, you are supposed to use the Temporary reserve page. Choose the available place and confirm, our system will reserve the parking place for you in the future 10 minutes and in a future version, we would be likely to give precise guidance to the exact place.<br><br>
 #### image
 reserve.png<br> reservation.png<br><br>
 ### Parking status
