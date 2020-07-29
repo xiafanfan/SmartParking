@@ -6,7 +6,7 @@ This project is about the reservation and allocation of the parking lots. The pr
 We suppose users register and log in with an enterprise email account for instant contact.
 #### image
 ![](https://github.com/xiafanfan/SmartParking/raw/master/screenshot/login.png)
-![](https://github.com/xiafanfan/SmartParking/raw/master/screenshot/signup.png)
+![](https://github.com/xiafanfan/SmartParking/raw/master/screenshot/signup.png)<br>
 ![](https://github.com/xiafanfan/SmartParking/raw/master/screenshot/resetpassword.png)
 ![](https://github.com/xiafanfan/SmartParking/raw/master/screenshot/account.png)<br><br>
 ### Regular reservation
