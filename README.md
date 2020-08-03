@@ -1,6 +1,8 @@
 # IntelligentParkingAssistant
 ## Description
-This project is about the reservation and allocation of the parking lots. The project is aimed to relieve the pressure of parking in Wuxi and Shanghai sites. We introduce the concept of flexible parking places to expand the capacity of the parking lot. Correspondingly, our smart parking system can help solve the problem of a vehicle blocking by intelligent reservation and allocation.
+This project is about the reservation and allocation of the parking lots. The project is aimed to relieve the pressure of parking in Wuxi and Shanghai sites. We introduce the concept of flexible parking places to expand the capacity of the parking lot. Correspondingly, our smart parking system can help solve the problem of a vehicle blocking by intelligent reservation and allocation.<br>
+Link to our backend service repo: <br>
+![](https://github.com/xiafanfan/SmartParkingBackend)
 ## Function pages
 ### Account settings
 We suppose users register and log in with an enterprise email account for instant contact.
